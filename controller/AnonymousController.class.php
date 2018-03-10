@@ -34,17 +34,17 @@ class AnonymousController extends Controller {
 			$nom = $request->read('nom');
 			$prenom = $request->read('prenom'); 
 			$mail = $request->read('mail');
-			$user = User::create($login, $password/*,$mail,$nom,$prenom*/);
+			$user = User::create($login, $password,$nom);
 		}
 		
-		if(!isset($user)) {
+		if(!$user){
 			$view = new View($this,'inscription');
 			$view->setArg('inscErrorText', 'Cannot complete inscription'); $view->render();
 		}else {
 			
 			$newRequest = new Request();
 			$newRequest->write('controller','user');
-			$newRequest->write('user','SuperUser');
+			$newRequest->write('user',$login);
 			
 			$newController = Dispatcher::dispatch($newRequest);
 			
@@ -55,12 +55,12 @@ class AnonymousController extends Controller {
 	
 	public function validateConnexion($request){
 		
-		/* $login = $request->read('inscLogin');
+		$login = $request->read('inscLogin');
 		
 		if(User::isLoginUsed($login)){
 			$newRequest = new Request();
 			$newRequest->write('controller','user');
-			$newRequest->write('user','SuperUser');
+			$newRequest->write('user',$login);
 			
 			$newController = Dispatcher::dispatch($newRequest);
 			
@@ -70,8 +70,7 @@ class AnonymousController extends Controller {
 			$view = new View($this,'connexion');
 			$view->setArg('inscErrorText','This login doesn\'t exist');
 			$view->render();
-		} */
-		User::getLogin();
+		}
 	}
 }
 ?>

@@ -7,10 +7,13 @@
 			//on simule la bdd
 			$users =  array(
 				//login => password
-				'riri'=>'fifi',
-				'yoda'=>'jedi',
-				'luc'=>'vador');
-			
+				);
+			//connexion à la base de donnée
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$sql = 'SELECT PSEUDO, PWD FROM utilisateur';
+			foreach ($db_connection->query($sql) as $row) {
+				$users[$row['PSEUDO']]=$row['PWD'];
+			}
 			$isUsed = false;
 			
 			
@@ -26,9 +29,14 @@
 					
 		}
 		
-		public static function create($login, $pwd){
-			$users[$login]=$pwd;
+		public static function create($login, $pwd, $nom){
 			if(!isset($login)) return null;
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = 'UPDATE `utilisateur` SET `PSEUDO` = "'. $login. '", `PWD` = "'. $pwd . '" WHERE `NOM` = "'. $nom . '";';
+			return $db_connection->query($sql);
+			
+			
 		}
 		
 		public static function getLogin(){
