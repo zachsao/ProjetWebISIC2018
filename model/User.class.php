@@ -29,11 +29,11 @@
 					
 		}
 		
-		public static function create($login, $pwd, $nom){
+		public static function create($login, $pwd, $nom, $promo, $service){
 			if(!isset($login)) return null;
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = 'UPDATE `utilisateur` SET `PSEUDO` = "'. $login. '", `PWD` = "'. $pwd . '" WHERE `NOM` = "'. $nom . '";';
+			$sql = 'UPDATE `utilisateur` SET `PSEUDO` = "'. $login. '", `PWD` = "'. $pwd . '",`PROMO`="'.$promo.'",`PROMO`="'.$service.'" WHERE `NOM` = "'. $nom . '";';
 			return $db_connection->query($sql);
 			
 			

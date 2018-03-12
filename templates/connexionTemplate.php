@@ -1,24 +1,3 @@
-<?php if(isset($inscErrorText)) 
-	echo '<span class="error">' . $inscErrorText . '</span>';
-?>
-<!--
-<form action="index.php?action=validateConnexion" method="post"> 
-	<table>
-		<tr> 
-			<th>Login* :</th> 
-			<td><input type="text" name="inscLogin"/></td> 
-		</tr> 
-		<tr> 
-			<th>Mot de passe* :</th> 
-			<td><input type="password" name="inscPassword"/></td> 
-		</tr> 
-		<tr> 
-			<th /> 
-			<td><input type="submit" value="Connexion" /></td> 
-		</tr>
-	</table> 
-</form> -->
-
 
 	<style>
 		
@@ -153,7 +132,7 @@
 					<div class="form-group col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Promo :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="Entrer votre année de promotion...">
+							<input type="text" class="form-control" placeholder="Entrer votre année de promotion..." name="promo">
 						</div>
 					</div>
                 </div>
@@ -164,7 +143,7 @@
 					<div class="form-group col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Service : </label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="Entrer le service auquel vous appartenez...">
+							<input type="text" class="form-control" placeholder="Entrer le service auquel vous appartenez..." name='service'>
 						</div>
 					</div>
                 </div>
@@ -190,6 +169,7 @@
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Login : </label>
 						<div class="col-md-8" style="display:inline-block">
 							<input type="text" class="form-control" placeholder="Entrer votre login..." name="inscLogin" required>
+							<?php if(isset($inscErrorText)) echo '<span class="error">' . $inscErrorText . '</span>';?>
 						</div>
 					</div>
                 </div>
