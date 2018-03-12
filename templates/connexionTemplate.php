@@ -1,5 +1,3 @@
-<h2>Connectez vous!</h2>
-
 <?php if(isset($inscErrorText)) 
 	echo '<span class="error">' . $inscErrorText . '</span>';
 ?>
@@ -69,72 +67,72 @@
 			font-size:1.2em;
 		}
 		
+		.form-group.requiredField .control-label:after { 
+			content:"*";
+			color:red;
+		}
+		
 	</style>
 	
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">BlablaWork</a>
-        <a class="btn" href="index.html">Retour</a>
-      </div>
-    </nav>
 
     <!-- Masthead -->
     <div id="pageConnexion" class="col-md-12">
       
 	  <div class="container">
+		</br>
 	  
 		<div class="col-md-6 " style="display:inline-block">
+			
+			
 			<div class="row">
 				</br>
 				<div class="col-md-12 "> <h1>Inscription</h1> </div>
 			</div>
 			</br></br></br>
 			
-			<form class="form-horizontal col-md-12 ">
+			<form action="index.php?action=validateInscription" class="form-horizontal col-md-12 " method="POST">
 				
 				<div class="row">
-					<div class="form-group col-md-12 ">
+					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Login : </label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="Darkou" name="inscLogin">
+							<input type="text" class="form-control" placeholder="Darkou" name="inscLogin" required>
 						</div>
 					</div>
                 </div>
 				
 				<div class="row">
-					<div class="form-group col-md-12 ">
+					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Mot de passe :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="password" class="form-control" placeholder="JeSuisTonPere (au moins 8 caractères)..." name="inscPassword">
+							<input type="password" class="form-control" placeholder="JeSuisTonPere (au moins 8 caractères)..." name="inscPassword" required>
 						</div>
 					</div>
                 </div>
 				
 				<div class="row">
-					<div class="form-group col-md-12 ">
+					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Confirmer le mot de passe :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="password" class="form-control" placeholder="Entrer de nouveau votre mot de passe...">
+							<input type="password" class="form-control" placeholder="Entrer de nouveau votre mot de passe..." required>
 						</div>
 					</div>
                 </div>
 				
 				<div class="row">
-					<div class="form-group col-md-12 ">
+					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Mail : </label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="dark-vador@imt-lille-douai.fr" name="mail">
+							<input type="text" class="form-control" placeholder="dark-vador@imt-lille-douai.fr" name="mail" required>
 						</div>
 					</div>
                 </div>
 				
 				<div class="row">
-					<div class="form-group col-md-12 ">
+					<div class="form- requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Nom :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="Vador" name="nom">
+							<input type="text" class="form-control" placeholder="Vador" name="nom" required>
 						</div>
 					</div>
                 </div>
@@ -143,7 +141,7 @@
 					<div class="form-group col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Prénom :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="Dark" name="prenom">
+							<input type="text" class="form-control" placeholder="Dark" name="prenom" required>
 						</div>
 					</div>
                 </div>
@@ -186,21 +184,21 @@
 			</div>
 			</br></br></br></br></br></br>
 			
-			<form action="index.php?action=validateConnexion" class="form-horizontal col-md-12 ">
+			<form action="index.php?action=validateConnexion" class="form-horizontal col-md-12 " method="POST">
 				<div class="row">
-					<div class="form-group col-md-12 ">
-						<label for="text" class="col-md-3 control-label" style="display:inline-block">Mail : </label>
+					<div class="form-group requiredField col-md-12 ">
+						<label for="text" class="col-md-3 control-label" style="display:inline-block">Login : </label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="Entrer votre email..." name="inscLogin">
+							<input type="text" class="form-control" placeholder="Entrer votre login..." name="inscLogin" required>
 						</div>
 					</div>
                 </div>
 				
 				<div class="row">
-					<div class="form-group col-md-12 ">
+					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Mot de passe :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="password" class="form-control" placeholder="Entrer votre mot de passe..." name="inscPassword">
+							<input type="password" class="form-control" placeholder="Entrer votre mot de passe..." name="inscPassword" required>
 						</div>
 					</div>
                 </div>	

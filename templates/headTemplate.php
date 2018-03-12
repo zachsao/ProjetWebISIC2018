@@ -7,7 +7,9 @@
 		<meta name="author" content="">
 
 		<title>Projet Web - Covoit</title>
+		
 
+		
 		<!-- Bootstrap core CSS -->
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,9 +21,9 @@
 		<!-- Custom styles for this template -->
 		<link href="css/landing-page.min.css" rel="stylesheet">
 		
-		
 		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>	
+		
 	</head> 
 	<body> 
 		

@@ -67,7 +67,7 @@ class AnonymousController extends Controller {
 			$view = new UserView($newController, 'information');
 			$view->render();
 		}else {
-			$view = new View($this,'connexion');
+			$view = new ConnectView($this,'connexion');
 			$view->setArg('inscErrorText','This login doesn\'t exist');
 			$view->render();
 		}
