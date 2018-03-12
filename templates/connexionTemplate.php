@@ -176,7 +176,7 @@
             </form>
 			
 		</div>
-		
+		                  
 		<div class="col-md-5" style="display:inline-block; vertical-align:top;">
 			<div class="row">
 				</br>
