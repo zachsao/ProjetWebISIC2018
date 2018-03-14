@@ -10,7 +10,7 @@
 				);
 			//connexion à la base de donnée
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT PSEUDO, PWD FROM utilisateur';
+			$sql = 'SELECT PSEUDO, PWD FROM `UTILISATEUR`';
 			foreach ($db_connection->query($sql) as $row) {
 				$users[$row['PSEUDO']]=$row['PWD'];
 			}
@@ -33,7 +33,7 @@
 			if(!isset($login)) return null;
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = 'UPDATE `utilisateur` SET `PSEUDO` = "'. $login. '", `PWD` = "'. $pwd . '",`PROMO`="'.$promo.'",`PROMO`="'.$service.'" WHERE `NOM` = "'. $nom . '";';
+			$sql = 'UPDATE `UTILISATEUR` SET `PSEUDO` = "'. $login. '", `PWD` = "'. $pwd . '",`PROMO`="'.$promo.'",`PROMO`="'.$service.'" WHERE `NOM` = "'. $nom . '";';
 			return $db_connection->query($sql);
 			
 			
@@ -41,7 +41,7 @@
 		
 		public static function getLogin(){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT EMAIL FROM utilisateur WHERE IS_AGENT=0 ORDER BY NOM LIMIT 10';
+			$sql = 'SELECT EMAIL FROM `UTILISATEUR` WHERE IS_AGENT=0 ORDER BY NOM LIMIT 10';
 			foreach ($db_connection->query($sql) as $row) {
 				print $row['EMAIL'] . "\n";
 			}

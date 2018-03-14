@@ -4,7 +4,7 @@
 						echo $_POST['prenom'];
 					else {
 						$db_connection = DatabasePDO::getCurrentPDO();
-						$sql = "SELECT PRENOM FROM utilisateur WHERE PSEUDO = '".$_POST['inscLogin']."'";
+						$sql = "SELECT PRENOM FROM `UTILISATEUR` WHERE PSEUDO = '".$_POST['inscLogin']."'";
 						foreach ($db_connection->query($sql) as $row) {
 							echo $row['PRENOM'];
 						}
@@ -15,7 +15,7 @@
 						echo $_POST['nom'];
 					else {
 						$db_connection = DatabasePDO::getCurrentPDO();
-						$sql = "SELECT NOM FROM utilisateur WHERE PSEUDO = '".$_POST['inscLogin']."'";
+						$sql = "SELECT NOM FROM `UTILISATEUR` WHERE PSEUDO = '".$_POST['inscLogin']."'";
 						foreach ($db_connection->query($sql) as $row) {
 							echo $row['NOM'];
 						}
@@ -25,7 +25,7 @@
 						echo $_POST['mail'];
 					else {
 						$db_connection = DatabasePDO::getCurrentPDO();
-						$sql = "SELECT EMAIL FROM utilisateur WHERE PSEUDO = '".$_POST['inscLogin']."'";
+						$sql = "SELECT EMAIL FROM `UTILISATEUR` WHERE PSEUDO = '".$_POST['inscLogin']."'";
 						foreach ($db_connection->query($sql) as $row) {
 							echo $row['EMAIL'];
 						}
