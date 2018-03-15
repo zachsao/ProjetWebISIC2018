@@ -36,7 +36,7 @@ class AnonymousController extends Controller {
 			$mail = $request->read('mail');
 			$promo = $request->read('promo');
 			$service = $request->read('service');
-			$user = User::create($login, $password,$nom, $promo, $service);
+			$user = User::create($login, $password,$nom,$prenom, $mail, $promo, $service);
 		}
 		
 		if(!$user){
