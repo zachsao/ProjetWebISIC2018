@@ -76,6 +76,7 @@
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Login : </label>
 						<div class="col-md-8" style="display:inline-block">
 							<input type="text" class="form-control" placeholder="Darkou" name="inscLogin" required>
+							<?php if(isset($inscErrorText)) echo '<span class="error">' . $inscErrorText . '</span>';?>
 						</div>
 					</div>
                 </div>
@@ -169,7 +170,7 @@
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Login : </label>
 						<div class="col-md-8" style="display:inline-block">
 							<input type="text" class="form-control" placeholder="Entrer votre login..." name="inscLogin" required>
-							<?php if(isset($inscErrorText)) echo '<span class="error">' . $inscErrorText . '</span>';?>
+							<?php if(isset($connErrorText)) echo '<span class="error">' . $connErrorText . '</span>';?>
 						</div>
 					</div>
                 </div>

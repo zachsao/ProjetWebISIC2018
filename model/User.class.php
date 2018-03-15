@@ -4,26 +4,21 @@
 		public $users;
 		
 		public static function isLoginUsed($login){
-			//on simule la bdd
 			$users =  array(
-				//login => password
+				//login
 				);
 			//connexion à la base de donnée
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT PSEUDO, PWD FROM `UTILISATEUR`';
+			$sql = 'SELECT PSEUDO FROM `UTILISATEUR`';
 			foreach ($db_connection->query($sql) as $row) {
-				$users[$row['PSEUDO']]=$row['PWD'];
+				$users[]=$row['PSEUDO'];
 			}
 			$isUsed = false;
 			
 			
-			if(isset($_POST['inscLogin']) && isset($_POST['inscPassword'])) {
-				$tryLogin = $_POST['inscLogin']; 
-				$tryPwd = $_POST['inscPassword']; 
-				// si login existe et password correspond 
-				}if( array_key_exists($_POST['inscLogin'],$users) && $users[$_POST['inscLogin']]==$_POST['inscPassword'] ) {
-					$isUsed = true; 
-				}
+			if(isset($_POST['inscLogin'])) {
+				$isUsed = in_array($_POST['inscLogin'],$users); 
+			}
 			
 			return $isUsed;
 					

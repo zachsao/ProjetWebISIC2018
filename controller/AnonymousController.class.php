@@ -24,9 +24,10 @@ class AnonymousController extends Controller {
 	
 	public function validateInscription($request) { 
 		$login = $request->read('inscLogin');
+	
 		
 		if(User::isLoginUsed($login)) { 
-			$view = new View($this,'inscription');
+			$view = new View($this,'connexion');
 			$view->setArg('inscErrorText','This login is already used');
 			$view->render(); 
 		}else{
@@ -37,12 +38,11 @@ class AnonymousController extends Controller {
 			$promo = $request->read('promo');
 			$service = $request->read('service');
 			$user = User::create($login, $password,$nom,$prenom, $mail, $promo, $service);
-		}
-		
-		if(!$user){
+			
+			if(!$user){
 			$view = new View($this,'inscription');
 			$view->setArg('inscErrorText', 'Cannot complete inscription'); $view->render();
-		}else {
+			}else {
 			
 			$newRequest = new Request();
 			$newRequest->write('controller','user');
@@ -52,7 +52,10 @@ class AnonymousController extends Controller {
 			
 			$view = new UserView($newController, 'information');
 			$view->render();
+			}
 		}
+		
+		
 	}
 	
 	public function validateConnexion($request){
@@ -70,7 +73,7 @@ class AnonymousController extends Controller {
 			$view->render();
 		}else {
 			$view = new ConnectView($this,'connexion');
-			$view->setArg('inscErrorText','This login doesn\'t exist');
+			$view->setArg('connErrorText','This login doesn\'t exist');
 			$view->render();
 		}
 	}
