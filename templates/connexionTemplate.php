@@ -86,6 +86,7 @@
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Mot de passe :</label>
 						<div class="col-md-8" style="display:inline-block">
 							<input type="password" class="form-control" placeholder="JeSuisTonPere (au moins 8 caractères)..." name="inscPassword" required>
+							<?php if(isset($inscErrorPwd)) echo '<span class="error">' . $inscErrorPwd . '</span>';?>
 						</div>
 					</div>
                 </div>
@@ -94,7 +95,8 @@
 					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Confirmer le mot de passe :</label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="password" class="form-control" placeholder="Entrer de nouveau votre mot de passe..." required>
+							<input type="password" class="form-control" placeholder="Entrer de nouveau votre mot de passe..." name="confirmPwd" required>
+							
 						</div>
 					</div>
                 </div>

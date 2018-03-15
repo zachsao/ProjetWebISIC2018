@@ -24,11 +24,21 @@ class AnonymousController extends Controller {
 	
 	public function validateInscription($request) { 
 		$login = $request->read('inscLogin');
+		$password = $request->read('inscPassword');
+		$confirmPwd = $request->read('confirmPwd');
 	
 		
 		if(User::isLoginUsed($login)) { 
 			$view = new View($this,'connexion');
 			$view->setArg('inscErrorText','This login is already used');
+			$view->render(); 
+		}else if(strlen($password)<8){
+			$view = new View($this,'connexion');
+			$view->setArg('inscErrorPwd','Password must be at least 8 characters !');
+			$view->render(); 
+		}else if(strcmp($password, $confirmPwd)!=0){
+			$view = new View($this,'connexion');
+			$view->setArg('inscErrorPwd','Passwords don\'t match !');
 			$view->render(); 
 		}else{
 			$password = $request->read('inscPassword');
