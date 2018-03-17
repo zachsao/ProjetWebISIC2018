@@ -30,15 +30,15 @@ class AnonymousController extends Controller {
 		
 		if(User::isLoginUsed($login)) { 
 			$view = new View($this,'connexion');
-			$view->setArg('inscErrorText','This login is already used');
+			$view->setArg('inscErrorText','Déjà utilisé ce login est');
 			$view->render(); 
 		}else if(strlen($password)<8){
 			$view = new View($this,'connexion');
-			$view->setArg('inscErrorPwd','Password must be at least 8 characters !');
+			$view->setArg('inscErrorPwd','8 caractères minimum, le mot de passe doit faire !');
 			$view->render(); 
 		}else if(strcmp($password, $confirmPwd)!=0){
 			$view = new View($this,'connexion');
-			$view->setArg('inscErrorPwd','Passwords don\'t match !');
+			$view->setArg('inscErrorPwd','Correspondre les mots de passe doivent !');
 			$view->render(); 
 		}else{
 			$password = $request->read('inscPassword');
@@ -51,7 +51,7 @@ class AnonymousController extends Controller {
 			
 			if(!$user){
 			$view = new View($this,'inscription');
-			$view->setArg('inscErrorText', 'Cannot complete inscription'); $view->render();
+			$view->setArg('inscErrorText', 'De compléter l\'inscription il est impossible'); $view->render();
 			}else {
 			
 			$newRequest = new Request();
@@ -71,8 +71,9 @@ class AnonymousController extends Controller {
 	public function validateConnexion($request){
 		
 		$login = $request->read('inscLogin');
+		$password = $request->read('inscPassword');
 		
-		if(User::isLoginUsed($login)){
+		if(User::pwdMatchesLogin($login,$password)){
 			$newRequest = new Request();
 			$newRequest->write('controller','user');
 			$newRequest->write('user',$login);
@@ -83,7 +84,7 @@ class AnonymousController extends Controller {
 			$view->render();
 		}else {
 			$view = new ConnectView($this,'connexion');
-			$view->setArg('connErrorText','This login doesn\'t exist');
+			$view->setArg('connErrorText','Incorrecte l\'Authentification est !');
 			$view->render();
 		}
 	}

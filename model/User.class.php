@@ -24,6 +24,25 @@
 					
 		}
 		
+		public static function pwdMatchesLogin($login, $password){
+			$users =  array(
+				//login => pwd
+				);
+			//connexion à la base de donnée
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$sql = 'SELECT PSEUDO, PWD FROM `UTILISATEUR`';
+			foreach ($db_connection->query($sql) as $row) {
+				$users[$row['PSEUDO']]=$row['PWD'];
+			}
+			$match = false;
+			if(isset($_POST['inscLogin']) && isset($_POST['inscPassword'])) {
+				if(array_key_exists($_POST['inscLogin'],$users) && $users[$_POST['inscLogin']]== $_POST['inscPassword'])
+					$match = true;
+			}
+			
+			return $match;
+		}
+		
 		public static function create($login, $pwd, $nom,$prenom, $mail, $promo, $service){
 			if(!isset($login)) return null;
 			if(!is_int($promo)) $promo = 0;
