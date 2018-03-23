@@ -53,6 +53,12 @@ class AnonymousController extends Controller {
 			$view = new View($this,'inscription');
 			$view->setArg('inscErrorText', 'De compléter l\'inscription il est impossible'); $view->render();
 			}else {
+			// on la démarre :)
+			session_start ();
+			// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+			$_SESSION['login'] = $_POST['inscLogin'];
+			$_SESSION['pwd'] = $_POST['inscPassword'];
+			
 			
 			$newRequest = new Request();
 			$newRequest->write('controller','user');
@@ -60,7 +66,7 @@ class AnonymousController extends Controller {
 			
 			$newController = Dispatcher::dispatch($newRequest);
 			
-			$view = new UserView($newController, 'information');
+			$view = new UserView($newController, 'profil');
 			$view->render();
 			}
 		}
@@ -74,14 +80,23 @@ class AnonymousController extends Controller {
 		$password = $request->read('inscPassword');
 		
 		if(User::pwdMatchesLogin($login,$password)){
+			// on la démarre :)
+			session_start ();
+			// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+			$_SESSION['login'] = $_POST['inscLogin'];
+			$_SESSION['pwd'] = $_POST['inscPassword'];
+			
 			$newRequest = new Request();
+			//echo $newRequest->getControllerName();
 			$newRequest->write('controller','user');
 			$newRequest->write('user',$login);
 			
 			$newController = Dispatcher::dispatch($newRequest);
+			$newController->execute();
 			
-			$view = new UserView($newController, 'information');
-			$view->render();
+			//echo $_GET['controller'];
+			/* $view = new UserView($newController, 'profil');
+			$view->render(); */
 		}else {
 			$view = new ConnectView($this,'connexion');
 			$view->setArg('connErrorText','Incorrecte l\'Authentification est !');

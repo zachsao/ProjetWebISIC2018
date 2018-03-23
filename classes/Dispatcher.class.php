@@ -8,12 +8,12 @@ class Dispatcher extends MyObject {
 		
 		switch($request->getControllerName()){
 			case 'Anonymous':
-				$ac = new AnonymousController($request);
-				return $ac;
+				return new AnonymousController($request);
+				
 				break;
 			case 'user':
-				$uc = new UserController($request);
-				return $uc;
+				return new UserController($request);
+				
 				break;
 		}
 		
