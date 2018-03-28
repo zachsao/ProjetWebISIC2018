@@ -1,10 +1,7 @@
 <?php
 
 class AnonymousController extends Controller {
-	
-	// public function __construct(){
-		// $this->validateInscription(Request::getCurrentRequest());
-	// }	
+		
 	
 	public function defaultAction($request){
 		$view = new AnonymousView($this, 'content'); 
@@ -41,7 +38,6 @@ class AnonymousController extends Controller {
 			$view->setArg('inscErrorPwd','Correspondre les mots de passe doivent !');
 			$view->render(); 
 		}else{
-			$password = $request->read('inscPassword');
 			$nom = $request->read('nom');
 			$prenom = $request->read('prenom'); 
 			$mail = $request->read('mail');
@@ -50,24 +46,15 @@ class AnonymousController extends Controller {
 			$user = User::create($login, $password,$nom,$prenom, $mail, $promo, $service);
 			
 			if(!$user){
-			$view = new View($this,'inscription');
-			$view->setArg('inscErrorText', 'De compléter l\'inscription il est impossible'); $view->render();
+				$view = new View($this,'inscription');
+				$view->setArg('inscErrorText', 'De compléter l\'inscription il est impossible'); $view->render();
 			}else {
-			// on la démarre :)
-			session_start ();
-			// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
-			$_SESSION['login'] = $_POST['inscLogin'];
-			$_SESSION['pwd'] = $_POST['inscPassword'];
 			
+				
+				$request->write('controller','user');
+				$newController = Dispatcher::dispatch($request);
+				$newController->execute();
 			
-			$newRequest = new Request();
-			$newRequest->write('controller','user');
-			$newRequest->write('user',$login);
-			
-			$newController = Dispatcher::dispatch($newRequest);
-			
-			$view = new UserView($newController, 'profil');
-			$view->render();
 			}
 		}
 		
@@ -80,28 +67,22 @@ class AnonymousController extends Controller {
 		$password = $request->read('inscPassword');
 		
 		if(User::pwdMatchesLogin($login,$password)){
-			// on la démarre :)
-			session_start ();
-			// on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
-			$_SESSION['login'] = $_POST['inscLogin'];
-			$_SESSION['pwd'] = $_POST['inscPassword'];
-			
-			$newRequest = new Request();
-			//echo $newRequest->getControllerName();
-			$newRequest->write('controller','user');
-			$newRequest->write('user',$login);
-			
-			$newController = Dispatcher::dispatch($newRequest);
+			$request->write('controller','user');
+			$newController = Dispatcher::dispatch($request);
 			$newController->execute();
 			
-			//echo $_GET['controller'];
-			/* $view = new UserView($newController, 'profil');
-			$view->render(); */
 		}else {
 			$view = new ConnectView($this,'connexion');
 			$view->setArg('connErrorText','Incorrecte l\'Authentification est !');
 			$view->render();
 		}
 	}
+	
+	public function deconnexion($request){
+		
+		$this->defaultAction($request);
+	}
+	
+
 }
 ?>

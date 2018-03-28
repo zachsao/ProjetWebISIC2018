@@ -174,11 +174,7 @@
 							if(isset($_POST['nom']))
 								echo $_POST['nom'];
 							else {
-								$db_connection = DatabasePDO::getCurrentPDO();
-								$sql = "SELECT NOM FROM `UTILISATEUR` WHERE PSEUDO = '".$_SESSION['login']."'";
-								foreach ($db_connection->query($sql) as $row) {
-									echo $row['NOM'];
-								}
+								echo User::getUserData($_SESSION["login"])["nom"];
 							}
 						?> "> <!--remplir value via php-->
 					  </div>
@@ -193,11 +189,7 @@
 							if(isset($_POST['prenom']))
 								echo $_POST['prenom'];
 							else {
-								$db_connection = DatabasePDO::getCurrentPDO();
-								$sql = "SELECT PRENOM FROM `UTILISATEUR` WHERE PSEUDO = '".$_SESSION['login']."'";
-								foreach ($db_connection->query($sql) as $row) {
-									echo $row['PRENOM'];
-								}
+								echo User::getUserData($_SESSION["login"])["prenom"];
 							}
 						?>"> <!--remplir value via php-->
 					  </div>
@@ -212,11 +204,7 @@
 							if(isset($_POST['mail']))
 								echo $_POST['mail'];
 							else {
-								$db_connection = DatabasePDO::getCurrentPDO();
-								$sql = "SELECT EMAIL FROM `UTILISATEUR` WHERE PSEUDO = '".$_SESSION['login']."'";
-								foreach ($db_connection->query($sql) as $row) {
-									echo $row['EMAIL'];
-								}
+								echo User::getUserData($_SESSION["login"])["mail"];
 							}
 						?> "> <!--remplir value via php-->
 					  </div>
