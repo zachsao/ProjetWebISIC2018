@@ -43,6 +43,11 @@ class UserController extends Controller {
 		$newController->execute();
 	}
 	
+	public function seeTrips($request){
+		$view = new UserView($this, 'trajets'); 
+		$view->render();
+	}
+	
 	
 	
 	

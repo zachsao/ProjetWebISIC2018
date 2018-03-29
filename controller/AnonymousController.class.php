@@ -78,6 +78,11 @@ class AnonymousController extends Controller {
 		}
 	}
 	
+	public function seeTrips($request){
+		$view = new AnonymousView($this, 'trajets'); 
+		$view->render();
+	}
+	
 	public function deconnexion($request){
 		
 		$this->defaultAction($request);

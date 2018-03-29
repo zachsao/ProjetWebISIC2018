@@ -117,7 +117,7 @@
 
 	
 	</br>
-	<h1> Bonjour <?php echo $_GET['controller'];?> ! </h1> <!-- remplir avec php      Si c'est de la merde, on peut enlever -->
+	<h1> Bonjour <?php echo $_SESSION['login'];?> ! </h1> <!-- remplir avec php      Si c'est de la merde, on peut enlever -->
 	</br>
 	
 	<div class="container col-12">
@@ -242,7 +242,7 @@
 			  <!--Mes trajets-->
 			  <div class="tab-pane fade" id="list-trajet" role="tabpanel" aria-labelledby="list-trajet-list">
 			  
-				<p> Des filtres ? </p>
+				<a class="btn btn-primary" href="index.php?controller=user&action=seeTrips">Chercher un trajet</a>
 				</br>
 				
 				<div id="contentTrajets">

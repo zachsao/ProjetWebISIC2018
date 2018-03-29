@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5"><!--Bienvenue sur CarCar Binks ! Voussa aller quelque part ?--><?php echo Request::getCurrentRequest()->getControllerName()?></h1>
+            <h1 class="mb-5">Bienvenue sur CarCar Binks ! <br>Voussa aller quelque part ?</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-			<form>
+			<!--<form>
 				<div class="form-row">
 					<form>
 						<div class="form-column">
@@ -37,13 +37,16 @@
 							  <p>Date</p>
 							</div>
 							<div class="col-12 col-md-9 mb-2 mb-md-0">
-							  <input type="datetime" class="form-control form-control-lg" placeholder="Quand ?">
+							  <input type="datetime" class="form-control form-control-lg" placeholder="29/03/2018">
 							</div>
 						</div>
 					</form>
+					
+					
 				</div>
 				
-			</form>
+			</form>-->
+			<a class="btn btn-primary" href="index.php?action=seeTrips">Chercher un trajet</a>
           </div>
         </div>
       </div>
