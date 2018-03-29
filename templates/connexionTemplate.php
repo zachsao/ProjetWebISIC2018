@@ -105,7 +105,7 @@
 					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Mail : </label>
 						<div class="col-md-8" style="display:inline-block">
-							<input type="text" class="form-control" placeholder="dark-vador@imt-lille-douai.fr" name="mail" required>
+							<input type="email" class="form-control" placeholder="dark-vador@imt-lille-douai.fr" name="mail" required>
 						</div>
 					</div>
                 </div>

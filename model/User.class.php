@@ -56,11 +56,11 @@
 			
 		}
 		
-		public static function getLogin(){
+		public static function getUserData($login){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT EMAIL FROM `UTILISATEUR` WHERE IS_AGENT=0 ORDER BY NOM LIMIT 10';
+			$sql = 'SELECT NOM, PRENOM, EMAIL FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
 			foreach ($db_connection->query($sql) as $row) {
-				print $row['EMAIL'] . "\n";
+				return array("nom"=>$row['NOM'], "prenom"=>$row['PRENOM'], "mail"=>$row['EMAIL']);
 			}
 		
 		}
