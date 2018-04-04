@@ -238,7 +238,7 @@
 						<div class="col-lg-6 trajetCaracteristiques">
 							<p><strong>Date</strong> : 01.01.2018 à 15h</p>
 							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
-							<a href="?action=connexion" class="btn btn-primary btn-success"> Se connecter pour s'inscrire à ce trajet</a>
+							<a href="?controller=user&action=confirmerTrajet" class="btn btn-primary btn-success"> S'inscrire à ce trajet</a>
 							
 						</div>
 						<div class="col-lg-3">
@@ -255,7 +255,7 @@
 						<div class="col-lg-6 trajetCaracteristiques">
 							<p><strong>Date</strong> : 01.01.2018 à 16h</p>
 							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
-							<a href="?action=connexion" class="btn btn-primary btn-success"> Se connecter pour s'inscrire à ce trajet</a>
+							<a href="?controller=user&action=confirmerTrajet" class="btn btn-primary btn-success"> S'inscrire à ce trajet</a>
 						</div>
 						<div class="col-lg-3">
 							<p><strong>Nombre de place restantes :</strong> </p>
@@ -271,7 +271,7 @@
 						<div class="col-lg-6 trajetCaracteristiques">
 							<p><strong>Date</strong> : 01.01.2018 à 17h</p>
 							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
-							<a href="?action=connexion" class="btn btn-primary btn-success"> Se connecter pour s'inscrire à ce trajet</a>
+							<a href="?controller=user&action=confirmerTrajet" class="btn btn-primary btn-success"> S'inscrire à ce trajet</a>
 						</div>
 						<div class="col-lg-3">
 							<p><strong>Nombre de place restantes :</strong> </p>

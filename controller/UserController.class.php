@@ -19,19 +19,10 @@ class UserController extends Controller {
 
 	}
 	
-	public function Homepage($request){
-		$view = new UserView($this, 'content'); 
+	public function accueil($request){
+		$view = new UserView($this, 'accueil'); 
 		$view->render();
 
-	}
-	
-	public function validateConnexion($request){
-		$view = new UserView($this, 'profil'); 
-		$view->render();
-	}
-	
-	public function validateInscription($request){
-		$this->defaultAction($request);
 	}
 	
 	
@@ -39,17 +30,21 @@ class UserController extends Controller {
 	public function deconnexion($request){
 		session_destroy ();
 		$request->write('controller','Anonymous');
+		$request->write('action','defaultAction');
 		$newController = Dispatcher::dispatch($request);
 		$newController->execute();
 	}
 	
-	public function seeTrips($request){
-		$view = new UserView($this, 'trajets'); 
+	
+	public function voirTrajets($request){
+		$view = new UserView($this, 'connectedTrajets'); 
 		$view->render();
 	}
 	
-	
-	
+	public function confirmerTrajet($request){
+		$view = new UserView($this, 'confirmationInscription'); 
+		$view->render();
+	}
 	
 	
 }

@@ -170,7 +170,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Nom : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" name="nom" value="<?php   
+						<input type="text" class="form-control" value="<?php   
 							if(isset($_POST['nom']))
 								echo $_POST['nom'];
 							else {
@@ -185,7 +185,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Prénom : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" name="prenom" value="<?php   
+						<input type="text" class="form-control" value="<?php   
 							if(isset($_POST['prenom']))
 								echo $_POST['prenom'];
 							else {
@@ -200,7 +200,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Mail : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="mail" class="form-control" name="mail" value="<?php   
+						<input type="mail" class="form-control" value="<?php   
 							if(isset($_POST['mail']))
 								echo $_POST['mail'];
 							else {
@@ -215,7 +215,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Numéro de téléphone : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" name="phone" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -463,6 +463,7 @@
 		</div>
 	</div>
 	
-		
+	
+	
 	
 	

@@ -4,15 +4,11 @@ class AnonymousController extends Controller {
 		
 	
 	public function defaultAction($request){
-		$view = new AnonymousView($this, 'content'); 
+		$view = new AnonymousView($this, 'accueil'); 
 		$view->render();
 
 	}
-	
-	public function inscription($request){
-		$view = new CreationFormView($this, 'inscription');
-		$view->render();
-	}
+
 	
 	public function connexion($request){
 		$view  = new ConnectView($this, 'connexion');
@@ -52,6 +48,7 @@ class AnonymousController extends Controller {
 			
 				
 				$request->write('controller','user');
+				$request->write('action','defaultAction');
 				$newController = Dispatcher::dispatch($request);
 				$newController->execute();
 			
@@ -68,25 +65,30 @@ class AnonymousController extends Controller {
 		
 		if(User::pwdMatchesLogin($login,$password)){
 			$request->write('controller','user');
+			$request->write('action','defaultAction');
 			$newController = Dispatcher::dispatch($request);
 			$newController->execute();
 			
 		}else {
 			$view = new ConnectView($this,'connexion');
-			$view->setArg('connErrorText','Incorrecte l\'Authentification est !');
+			$view->setArg('connErrorText','Incorrecte est l\'Authentification!');
 			$view->render();
 		}
 	}
 	
-	public function seeTrips($request){
+	
+	public function voirTrajets($request){
 		$view = new AnonymousView($this, 'trajets'); 
 		$view->render();
 	}
 	
-	public function deconnexion($request){
-		
-		$this->defaultAction($request);
+	public function sinscrireAuTrajet($request){
+		$view = new AnonymousView($this, 'trajets'); 
+		$view->setArg('connErrorText','Vous connecter d\'abord vous devez!');
+		$view->render();
 	}
+	
+
 	
 
 }
