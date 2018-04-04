@@ -242,7 +242,6 @@
 			  <!--Mes trajets-->
 			  <div class="tab-pane fade" id="list-trajet" role="tabpanel" aria-labelledby="list-trajet-list">
 			  
-				<a class="btn btn-primary" href="index.php?controller=user&action=seeTrips">Chercher un trajet</a>
 				</br>
 				
 				<div id="contentTrajets">
@@ -254,6 +253,7 @@
 						<div class="col-lg-6 trajetCaracteristiques">
 							<p><strong>Date</strong> : 01.01.2018 à 15h</p>
 							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
+							<a href="#" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> Se désinscrire</a>
 						</div>
 						<div class="col-lg-3">
 							<p><strong>Nombre de place restantes :</strong> </p>
@@ -269,6 +269,7 @@
 						<div class="col-lg-6 trajetCaracteristiques">
 							<p><strong>Date</strong> : 01.01.2018 à 16h</p>
 							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
+							<a href="#" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> Se désinscrire</a>
 						</div>
 						<div class="col-lg-3">
 							<p><strong>Nombre de place restantes :</strong> </p>
@@ -284,6 +285,7 @@
 						<div class="col-lg-6 trajetCaracteristiques">
 							<p><strong>Date</strong> : 01.01.2018 à 17h</p>
 							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
+							<a href="#" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> Se désinscrire</a>
 						</div>
 						<div class="col-lg-3">
 							<p><strong>Nombre de place restantes :</strong> </p>
@@ -461,7 +463,6 @@
 		</div>
 	</div>
 	
-	
-	
+		
 	
 	
