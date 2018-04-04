@@ -154,7 +154,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Login : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value="<?php echo $_SESSION['login'];?> " disabled> 
+						<input type="text" class="form-control" name="infoLogin" value="<?php echo $_SESSION['login'];?> " disabled> 
 					  </div>
 					</div>
 				  </div>
@@ -163,7 +163,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Mot de passe : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="password" class="form-control" value="<?php echo $_SESSION['pwd'];?> " disabled> 
+						<input type="password" class="form-control" name="infoPwd" value="<?php echo $_SESSION['pwd'];?> " disabled> 
 					  </div>
 					</div>
 				  </div>
@@ -173,7 +173,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Nom : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value="<?php   
+						<input type="text" class="form-control" name="nom" value="<?php   
 							if(isset($_POST['nom']))
 								echo $_POST['nom'];
 							else {
@@ -188,7 +188,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Prénom : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value="<?php   
+						<input type="text" class="form-control" name="prenom" value="<?php   
 							if(isset($_POST['prenom']))
 								echo $_POST['prenom'];
 							else {
@@ -203,7 +203,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Mail : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="mail" class="form-control" value="<?php   
+						<input type="mail" class="form-control" name="mail" value="<?php   
 							if(isset($_POST['mail']))
 								echo $_POST['mail'];
 							else {
@@ -218,7 +218,13 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Numéro de téléphone : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> 
+						<input type="text" class="form-control" name="phone" value="<?php   
+							if(isset($_POST['phone']))
+								echo $_POST['phone'];
+							else {
+								echo User::getUserData($_SESSION["login"])["phone"];
+							}
+						?> "> 
 					  </div>
 					</div>
 				  </div>

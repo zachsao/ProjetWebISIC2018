@@ -58,9 +58,24 @@ class UserController extends Controller {
 	}
 	
 	public function changerInfoGeneral($request){
+		$login = $_SESSION['login'];
+		$nom = $_POST['nom'];
+		$prenom = $_POST['prenom'];
+		$mail = $_POST['mail'];
+		$phone = $_POST['phone'];
+		User::changeUserProfilInfo($login,$nom,$prenom,$mail,$phone);
+		$this->defaultAction($request);
 	}
 	
 	public function changerInfoVehicule($request){
+		$login = $_SESSION['login'];
+		$modele = $_POST['modele'];
+		$couleur = $_POST['couleur'];
+		$km = $_POST['km'];
+		$nbPlaces = $_POST['nbPlaces'];
+		$nomBolide = $_POST['nomBolide'];
+		User::changeUserProfilInfo($login,$nom,$prenom,$mail,$phone);
+		$this->profilVehicule($request);
 	}
 	
 	public function changerInfoParametre($request){

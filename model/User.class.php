@@ -48,7 +48,6 @@
 			if(!is_int($promo)) $promo = 0;
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//$sql = 'UPDATE `UTILISATEUR` SET `PSEUDO` = "'. $login. '", `PWD` = "'. $pwd . '",`PROMO`="'.$promo.'",`PROMO`="'.$service.'" WHERE `NOM` = "'. $nom . '";';
 			$sql = "INSERT INTO `UTILISATEUR` (`PSEUDO`, `PWD`, `NOM`, `PRENOM`, `EMAIL`, `PROMO`, `SERVICE` ) 
 				VALUES ('".$login."','".$pwd."','".$nom."','".$prenom."','".$mail."',".$promo.",'".$service."')";
 			return $db_connection->query($sql);
@@ -58,11 +57,17 @@
 		
 		public static function getUserData($login){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT NOM, PRENOM, EMAIL FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
+			$sql = 'SELECT NOM, PRENOM, EMAIL, TELEPHONE FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
 			foreach ($db_connection->query($sql) as $row) {
-				return array("nom"=>$row['NOM'], "prenom"=>$row['PRENOM'], "mail"=>$row['EMAIL']);
+				return array("nom"=>$row['NOM'], "prenom"=>$row['PRENOM'], "mail"=>$row['EMAIL'], "phone"=>$row['TELEPHONE']);
 			}
 		
+		}
+		
+		public static function changeUserProfilInfo($login,$nom,$prenom,$mail,$phone){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$sql = 'UPDATE `UTILISATEUR` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '";';
+			$db_connection->query($sql) or die ("sql query error ! request : " . $sql);
 		}
 		
 		

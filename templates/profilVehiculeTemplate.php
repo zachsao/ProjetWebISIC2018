@@ -153,7 +153,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Modèle : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" name="modele" value=" "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -162,7 +162,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Couleur du véhicule : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" name="couleur" value=" "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -171,7 +171,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Kilométrage : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" name="km" value=" "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -180,7 +180,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Nombre de places : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" name="nbPlaces" value=" "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -189,7 +189,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Nom de votre bolide : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" name="nomBolide" placeHolder="maCaisse"value=" "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
