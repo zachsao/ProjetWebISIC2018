@@ -82,20 +82,13 @@ class AnonymousController extends Controller {
 		$view->render();
 	}
 	
-<<<<<<< HEAD
+
 	public function sinscrireAuTrajet($request){
 		$view = new AnonymousView($this, 'trajets'); 
 		$view->setArg('connErrorText','Vous connecter d\'abord vous devez!');
 		$view->render();
-||||||| merged common ancestors
-	public function deconnexion($request){
-		
-		$this->defaultAction($request);
-=======
-	public function deconnexion($request){
-		$this->defaultAction($request);
->>>>>>> 432dcc44bdb5bad3e20badf4ba3b21f45825b6bc
 	}
+
 	
 
 	

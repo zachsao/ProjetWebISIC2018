@@ -131,7 +131,7 @@
 		 <div class="row">
 		  <div class="col-3">
 			<div class="btn-group-vertical col-12" >
-				<a href="?controller=user&action=profilGeneral" class="col-12"><button type="button" class="btn btn-info">Mon Profil</button></a>
+				<a href="?controller=user" class="col-12"><button type="button" class="btn btn-info">Mon Profil</button></a>
 				<a href="?controller=user&action=profilTrajet" class="col-12"><button type="button" class="btn btn-info">Mes Trajets</button></a>
 				<a href="?controller=user&action=profilGroupe" class="col-12"><button type="button" class="btn btn-info active">Mes Groupes</button></a>
 				<a href="?controller=user&action=profilVehicule" class="col-12"><button type="button" class="btn btn-info">Mon Véhicule</button></a>

@@ -18,18 +18,14 @@ class UserController extends Controller {
 		$view->render();
 	}
 
-	public function profilGeneral($request){
-		$view = new UserView($this, 'profilGeneral'); 
+	
+	
+
+	public function accueil($request){
+		$view = new UserView($this, 'accueil'); 
 		$view->render();
 	}
 	
-<<<<<<< HEAD
-	public function accueil($request){
-		$view = new UserView($this, 'accueil'); 
-||||||| merged common ancestors
-	public function Homepage($request){
-		$view = new UserView($this, 'content'); 
-=======
 	public function profilTrajet($request){
 		$view = new UserView($this, 'profilTrajet'); 
 		$view->render();
@@ -42,12 +38,10 @@ class UserController extends Controller {
 	
 	public function profilVehicule($request){
 		$view = new UserView($this, 'profilVehicule'); 
->>>>>>> 432dcc44bdb5bad3e20badf4ba3b21f45825b6bc
 		$view->render();
 	}
 	
-<<<<<<< HEAD
-||||||| merged common ancestors
+
 	public function validateConnexion($request){
 		$view = new UserView($this, 'profil'); 
 		$view->render();
@@ -57,7 +51,7 @@ class UserController extends Controller {
 		$this->defaultAction($request);
 	}
 	
-=======
+
 	public function profilParametre($request){
 		$view = new UserView($this, 'profilParametre'); 
 		$view->render();
@@ -71,12 +65,7 @@ class UserController extends Controller {
 	
 	public function changerInfoParametre($request){
 	}
->>>>>>> 432dcc44bdb5bad3e20badf4ba3b21f45825b6bc
-	
-	public function Homepage($request){
-		$view = new UserView($this, 'content'); 
-		$view->render();
-	}
+
 	
 	public function deconnexion($request){
 		session_destroy ();

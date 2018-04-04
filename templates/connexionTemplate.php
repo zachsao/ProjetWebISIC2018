@@ -22,6 +22,7 @@
 			background-image:url(img/connexionWallpaper.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-position:center;
 			min-height:100%;
 		}
 		
