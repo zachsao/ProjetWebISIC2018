@@ -1,5 +1,4 @@
 
-	
 	<style>
 		
 		
@@ -115,10 +114,10 @@
 		
 	</style>
 
-	
+
 	
 	</br>
-	<h1> Bonjour ****** ! </h1> <!-- remplir avec php      Si c'est de la merde, on peut enlever -->
+	<h1> Bonjour <?php echo $_SESSION['login'];?> ! </h1> <!-- remplir avec php      Si c'est de la merde, on peut enlever -->
 	</br>
 	
 	<div class="container col-12">
@@ -152,7 +151,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Login : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" value="<?php echo $_SESSION['login'];?> " disabled> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -161,7 +160,7 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Mot de passe : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="password" class="form-control" value="<?php echo $_SESSION['pwd'];?> " disabled> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -171,7 +170,13 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Nom : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" value="<?php   
+							if(isset($_POST['nom']))
+								echo $_POST['nom'];
+							else {
+								echo User::getUserData($_SESSION["login"])["nom"];
+							}
+						?> "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -180,7 +185,13 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Prénom : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="text" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="text" class="form-control" value="<?php   
+							if(isset($_POST['prenom']))
+								echo $_POST['prenom'];
+							else {
+								echo User::getUserData($_SESSION["login"])["prenom"];
+							}
+						?>"> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -189,7 +200,13 @@
 					<div class="form-group col-lg-12">
 					  <label for="text" class="col-lg-4 control-label">Mail : </label>
 					  <div class="col-lg-7" style="display:inline-block">
-						<input type="mail" class="form-control" value=" "> <!--remplir value via php-->
+						<input type="mail" class="form-control" value="<?php   
+							if(isset($_POST['mail']))
+								echo $_POST['mail'];
+							else {
+								echo User::getUserData($_SESSION["login"])["mail"];
+							}
+						?> "> <!--remplir value via php-->
 					  </div>
 					</div>
 				  </div>
@@ -446,7 +463,6 @@
 		</div>
 	</div>
 	
-	
-	
+		
 	
 	
