@@ -15,7 +15,7 @@ class AnonymousController extends Controller {
 	}
 	
 	public function connexion($request){
-		$view  = new ConnectView($this, 'connexion');
+		$view = new ConnectView($this, 'connexion');
 		$view->render();
 	}
 	
@@ -52,6 +52,7 @@ class AnonymousController extends Controller {
 			
 				
 				$request->write('controller','user');
+				$request->write('action','defaultAction');
 				$newController = Dispatcher::dispatch($request);
 				$newController->execute();
 			
@@ -68,6 +69,7 @@ class AnonymousController extends Controller {
 		
 		if(User::pwdMatchesLogin($login,$password)){
 			$request->write('controller','user');
+			$request->write('action','defaultAction');
 			$newController = Dispatcher::dispatch($request);
 			$newController->execute();
 			
@@ -84,7 +86,6 @@ class AnonymousController extends Controller {
 	}
 	
 	public function deconnexion($request){
-		
 		$this->defaultAction($request);
 	}
 	

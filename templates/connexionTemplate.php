@@ -2,7 +2,8 @@
 	<style>
 		
 		h1{
-			color:DarkBlue;
+			background-color:rgba(10,10,10,0.8);
+			color:White;
 			text-align:center;
 		}
 		
@@ -24,9 +25,6 @@
 			min-height:100%;
 		}
 		
-		footer{
-			clear:both;
-		}
 		
 		.container{
 			margin:0px;
@@ -51,21 +49,24 @@
 			color:red;
 		}
 		
+		#inscriptionForm label{
+			color: orange;
+		}
+		
 	</style>
 	
 
-    <!-- Masthead -->
     <div id="pageConnexion" class="col-md-12">
       
 	  <div class="container">
 		</br>
 	  
-		<div class="col-md-6 " style="display:inline-block">
+		<div class="col-md-6 " style="display:inline-block" id="inscriptionForm">
 			
 			
 			<div class="row">
 				</br>
-				<div class="col-md-12 "> <h1>Inscription</h1> </div>
+				<div class="offset-2 col-md-8 "> <h1>Inscription</h1> </div>
 			</div>
 			</br></br></br>
 			
@@ -151,9 +152,8 @@
 					</div>
                 </div>
 				
-				<input type="submit" value="Inscription" />
-				<!--<a href="#" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-check"></span> S'incrire</a>
-				 https://bootsnipp.com/buttons -->
+				</br></br>
+				<input class="offset-4" type="submit" value="Inscription" />
 				
             </form>
 			
@@ -162,7 +162,7 @@
 		<div class="col-md-5" style="display:inline-block; vertical-align:top;">
 			<div class="row">
 				</br>
-				<div class="col-md-12"> <h1>Déja inscrit ?</h1> </div>
+				<div class="offset-2 col-md-8"> <h1>Déja inscrit ?</h1> </div>
 			</div>
 			</br></br></br></br></br></br>
 			
@@ -185,8 +185,9 @@
 						</div>
 					</div>
                 </div>	
-				<input type="submit" value="Connexion" />
-				<!--<a href="#" class="pull-right btn btn-lg btn-primary"><span class="glyphicon glyphicon-circle-arrow-right"></span> Se connecter</a>-->
+				
+				</br></br>
+				<input class="offset-6" type="submit" value="Connexion" />
             </form>
 		</div>
 		</br></br></br>
