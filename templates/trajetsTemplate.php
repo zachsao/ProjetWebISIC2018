@@ -1,101 +1,4 @@
-
-	<style>
-		#wallPaperTrajet{
-			min-height: 400px;
-			
-			background-image:url(img/wallpaperTrajet.jpg) ;
-			background-repeat: no-repeat;
-			background-size:cover;
-			background-position: center;
-		}
-		
-		#filtreTrajet{
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		}
-		
-		
-		
-		
-		#contentTrajets > div{
-			border : 2px solid rgb(230,230,255);
-			margin-bottom : 5px;
-		}
-		
-		#contentTrajets > div:hover{
-			background-color:rgb(200,200,200);
-		}
-		
-		
-		.trajetConducteur, .trajetCaracteristiques{
-			border-right:1px solid rgb(230,230,255);
-			text-align:center;
-		}
-		
-		.trajetConducteur > img{
-			border-radius:100%;
-			width:70px;
-			height:70px;
-			border: 1px solid black;
-		}
-		
-		
-		.trajetNombrePlaceRestante{
-			font-size:3em;
-			font-weight:150%;
-			text-align:center;
-		}
-		
-		
-		
-		
-		
-		#navJoursTrajets{
-			text-align:center;
-			margin:auto;
-			margin-bottom:10px;
-			
-			background-color:rgba(240,240,240,0.8);
-			border-radius:5px;
-		}
-		
-		#navJoursTrajets li{
-			line-height: 25px;
-			
-			border-left: 1px solid rgb(200,200,200);
-			border-right: 1px solid rgb(200,200,200);
-			
-			vertical-align:middle;
-			
-			cursor:pointer;
-		}
-		
-		#navJoursTrajets li:hover{
-			background-color:rgb(200,200,200);
-		}
-		
-		#navJoursTrajets li:active{
-			background-color:rgb(200,200,200);
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		#pagination ul{
-			text-align:center;
-			margin:auto;
-		}
-		
-	</style>
-	
-	
-		
-
-	
-	<!--Image de fond de la page trajet-->
+<!--Image de fond de la page trajet-->
 	<div id="wallPaperTrajet"></div>
 	
 	
@@ -151,14 +54,14 @@
 				
 				</br>
 				<a href="#" class="btn btn-block btn-primary btn-info"> Filtrer</a>
-
+				</br>
 				</fieldset>
 			</form>
 		  </div>
 		  
 		  
 		  <!---------------Les trajets--------------------->
-		  <div class="offset-1 col-md-8" >
+		  <div class="col-md-8" >
 		  
 				<!---------------Les jours au dessus des trajets -------------------->
 				<div class="row">

@@ -1,0 +1,264 @@
+/*Style light*/
+
+/******************************General***************************************/
+h1,h2,h3{
+	text-align:center;
+}
+
+h2{
+	color:White;
+}
+
+h3{
+	color : DarkGrey;
+}
+
+.container{
+	margin:0px;
+	max-width:3000px;
+}
+
+
+
+/******************************Page d'accueil***************************************/
+
+#navbarLinks a {
+	margin: 0px 10px;
+}
+
+
+
+/******************************Connexion***************************************/
+.h1Connexion{
+	background-color:rgba(10,10,10,0.8);
+	color:White;
+}
+
+#pageConnexion{
+	background-image:url(../img/connexionWallpaper.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height:100%;
+}
+
+#pageConnexion label{
+	color : rgb(40,40,40);
+	font-size:20px;
+	font-weight:bold;
+}
+
+.inputButton{
+	width:120px;
+	min-height:50px;
+
+	background-color: rgba(20,20,100,0.8);
+	border : 1px rgba(50,50,130,0.8);
+	border-radius:5%;
+	
+	text-align:center;
+	color:white;
+	font-size:1.2em;
+}
+
+
+.form-group.requiredField .control-label:after { 
+	content:"*";
+	color:red;
+}
+
+#inscriptionForm label{
+	color: orange;
+}
+
+/******************************Mon compte***************************************/
+/***General***/
+
+.pageProfilGeneral a,label {
+	font-size : 1.4em;
+}
+
+.btn-group-vertical button{
+	border:1px solid rgb(200,200,255);
+}
+
+
+
+/***Trajet***/
+
+
+
+#contentTrajets > div{
+	border : 2px solid rgb(230,230,255);
+	margin-bottom : 5px;
+}
+
+.trajetConducteur, .trajetCaracteristiques{
+	border-right:1px solid rgb(230,230,255);
+	text-align:center;
+}
+
+.trajetConducteur > img{
+	border-radius:100%;
+	width:70px;
+	height:70px;
+	border: 1px solid black;
+}
+
+
+.trajetNombrePlaceRestante{
+	font-size:3em;
+	font-weight:150%;
+	text-align:center;
+}
+
+.trajetFini{
+	background-color: gray;
+}
+
+
+
+/***Groupe***/
+
+#boutonCreerGroupe{
+	margin:auto;
+}
+
+#contentGroupes > div {
+	border : 2px solid rgb(230,230,255);
+	text-align:center;
+	display:inline-block;
+}
+
+.titreGroupe{
+	text-align:center;
+	font-size:1.5em;
+	font-weight:bold;
+	color: rgb(0,0,55);
+}
+
+.imgGroupe{
+	border-radius:100%;
+	width:70px;
+	height:70px;
+}
+
+.descriptifGroupe{
+	font-style:italic;
+	font-size:0.9em;
+	color : grey;
+	height : 50px;
+	overflow:auto;
+}
+
+/***Vehicule***/
+
+#imgVoiture, #imgProfil{
+	text-align:center;
+}
+
+#imgVoiture > img, #imgProfil > img {
+	border-radius:100%;
+	width:200px;
+	height:200px;
+	border : 1px solid rgb(150,150,250);
+}
+
+/***Parametre***/
+
+
+#choixTheme label{
+	text-align:center;
+	margin:auto;
+}
+
+/******************************Chercher un trajet***************************************/
+
+#wallPaperTrajet{
+	min-height: 400px;
+	
+	background-image:url(../img/wallpaperTrajet.jpg) ;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+}
+
+#filtreTrajet{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin:10px 5vw 10px 10px;
+}
+
+#contentTrajets > div{
+	border : 2px solid rgb(230,230,255);
+	margin-bottom : 5px;
+}
+
+#contentTrajets > div:hover{
+	background-color:rgb(200,200,200);
+}
+
+.trajetConducteur, .trajetCaracteristiques{
+	border-right:1px solid rgb(230,230,255);
+	text-align:center;
+}
+
+.trajetConducteur > img{
+	border-radius:100%;
+	width:70px;
+	height:70px;
+	border: 1px solid black;
+}
+
+.trajetNombrePlaceRestante{
+	font-size:3em;
+	font-weight:150%;
+	text-align:center;
+}
+
+#navJoursTrajets{
+	text-align:center;
+	margin:auto;
+	margin-bottom:10px;
+	
+	background-color:rgba(240,240,240,0.8);
+	border-radius:5px;
+}
+
+#navJoursTrajets li{
+	line-height: 25px;
+	
+	border-left: 1px solid rgb(200,200,200);
+	border-right: 1px solid rgb(200,200,200);
+	
+	vertical-align:middle;
+	
+	cursor:pointer;
+}
+
+#navJoursTrajets li:hover{
+	background-color:rgb(200,200,200);
+}
+
+#navJoursTrajets li:active{
+	background-color:rgb(200,200,200);
+}
+
+#pagination ul{
+	text-align:center;
+	margin:auto;
+}
+
+/******************************Confirmation trajet***************************************/
+
+#confirmationTrajet{
+	background-image:url(../img/wallpaperConfirmationTrajet.jpg) ;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: top;
+	
+	min-height:95vh;
+}
+
+#confirmationTrajet li{
+	font-style:italic;
+	font-size:1.1em;
+}

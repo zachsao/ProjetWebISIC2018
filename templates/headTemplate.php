@@ -21,8 +21,9 @@
 		<!-- Custom styles for this template -->
 		<link href="css/landing-page.min.css" rel="stylesheet">
 		
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>	
+		<!-- Notre fiche css -->
+		<link href="css/styleLight.css" rel="stylesheet">
+		
 		
 	</head> 
 	<body> 
