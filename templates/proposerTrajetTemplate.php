@@ -4,7 +4,7 @@
 			</div>
 			</br></br></br>
 			
-			<form action="index.php?action=validateInscription" class="form-horizontal col-md-12 " method="POST">
+			<form action="#" class="form-horizontal col-md-12 " method="POST">
 				
 				<div class="row">
 					<div class="form-group requiredField col-md-12 ">
