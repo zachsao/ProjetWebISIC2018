@@ -88,6 +88,19 @@ class AnonymousController extends Controller {
 		$view->setArg('connErrorText','Vous connecter d\'abord vous devez!');
 		$view->render();
 	}
+	
+	public function filtrerTrajets($request){
+		$depart = $_POST['filtreDepart'];
+		$arrivee = $_POST['filtreArrivee'];
+		$date = $_POST['filtreDate'];
+		
+		$trajets=( Trajet::getTrajet($date,$depart,$arrivee));
+		$request->write('trips',$trajets);
+		//print_r($_GET['trips']);
+		$this->voirTrajets($request);
+	}
+	
+
 
 	
 

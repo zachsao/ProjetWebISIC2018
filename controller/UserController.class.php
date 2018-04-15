@@ -19,10 +19,8 @@ class UserController extends Controller {
 	}
 
 	
-	
-
 	public function accueil($request){
-		$view = new UserView($this, 'accueil'); 
+		$view = new UserView($this, 'ConnectedAccueil'); 
 		$view->render();
 	}
 	
@@ -96,10 +94,31 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
+	public function filtrerTrajets($request){
+		$depart = $_POST['filtreDepart'];
+		$arrivee = $_POST['filtreArrivee'];
+		$date = $_POST['filtreDate'];
+		
+		if(isset($_GET['trips']))
+			unset($_GET['trips']);
+		
+		$trajets=( Trajet::getTrajet($date,$depart,$arrivee));
+		$request->write('trips',$trajets);
+		//print_r($_GET['trips']);
+		$request->write('action','voirTrajets');
+		$this->execute();
+	}
+	
 	public function confirmerTrajet($request){
 		$view = new UserView($this, 'confirmationInscription'); 
 		$view->render();
 	}
+	
+	public function proposerTrajet($request){
+		$view = new UserView($this, 'proposerTrajet'); 
+		$view->render();
+	}
+
 	
 	
 }

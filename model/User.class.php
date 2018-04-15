@@ -3,6 +3,7 @@
 		
 		public $users;
 		
+		//verifie si $login existe dans la bdd
 		public static function isLoginUsed($login){
 			$users =  array(
 				//login
@@ -24,6 +25,7 @@
 					
 		}
 		
+		//verifie la correspondance entre $login et $password dans la bdd
 		public static function pwdMatchesLogin($login, $password){
 			$users =  array(
 				//login => pwd
@@ -43,6 +45,7 @@
 			return $match;
 		}
 		
+		//ajoute un utilisateur dans la bdd
 		public static function create($login, $pwd, $nom,$prenom, $mail, $promo, $service){
 			if(!isset($login)) return null;
 			if(!is_int($promo)) $promo = 0;
@@ -55,6 +58,7 @@
 			
 		}
 		
+		//recupere les infos d'un user
 		public static function getUserData($login){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$sql = 'SELECT NOM, PRENOM, EMAIL, TELEPHONE FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
@@ -64,11 +68,14 @@
 		
 		}
 		
+		//modifie les infos d'un user
 		public static function changeUserProfilInfo($login,$nom,$prenom,$mail,$phone){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$sql = 'UPDATE `UTILISATEUR` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '";';
 			$db_connection->query($sql) or die ("sql query error ! request : " . $sql);
 		}
+		
+		
 		
 		
 	}
