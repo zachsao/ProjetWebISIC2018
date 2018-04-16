@@ -26,9 +26,11 @@
 		public static function inscriptionTrajet($id_user, $code_trajet){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//associe un utilisateur à un trajet
 			$sql = "INSERT INTO `S_INSCRIRE` (`CODETRAJET`, `ID_USER`) VALUES (".$code_trajet.",".$id_user.")";
 			$db_connection->query($sql);	
 			
+			//met à jour le nombre de places restantes
 			$sql = "UPDATE `TRAJET` SET NOMBRE_PLACES = (NOMBRE_PLACES-1) WHERE CODETRAJET=".$code_trajet;
 			$db_connection->query($sql);
 		}

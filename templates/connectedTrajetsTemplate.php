@@ -137,7 +137,11 @@
 									<div class="col-lg-6 trajetCaracteristiques">
 										<p><strong>Date</strong> : <?php  echo $trip['HORAIREDEPART'];?></p>
 										<p><strong>Trajet : </strong> <?php  echo $trip['LIEUDEPART'];?> - <?php echo $trip['LIEUARRIVEE'];?></p>
+										<?php if($trip['NOMBRE_PLACES']>0){ ?>
 										<a href="?controller=user&action=confirmerTrajet&idTrajet= <?php echo $trip['CODETRAJET'];?>" class="btn btn-primary btn-success"> S'inscrire à ce trajet</a>
+										<?php }else{ ?>
+										<a class="btn btn-primary btn-success" disabled> Trajet complet</a>
+										<?php } ?>
 										
 									</div>
 									<div class="col-lg-3">
