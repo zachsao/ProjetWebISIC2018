@@ -110,6 +110,8 @@ class UserController extends Controller {
 	}
 	
 	public function confirmerTrajet($request){
+		$id_user = User::getUserId($_SESSION['login']);
+		Trajet::inscriptionTrajet($id_user['id'],$_GET['idTrajet']);
 		$view = new UserView($this, 'confirmationInscription'); 
 		$view->render();
 	}

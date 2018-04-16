@@ -77,6 +77,15 @@
 		
 		
 		
+		public static function getUserId($login){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$sql = 'SELECT ID_USER FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
+			foreach ($db_connection->query($sql) as $row) {
+				return array("id"=>$row['ID_USER']);
+			}
+		
+		}
+		
 		
 	}
 ?>

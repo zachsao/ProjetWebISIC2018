@@ -23,13 +23,11 @@
 			
 		}
 		
-		public static function inscriptionTrajet($date, $depart, $arrivee, $id_user, $code_trajet){
+		public static function inscriptionTrajet($id_user, $code_trajet){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO `S_INSCRIRE` (`CODETRAJET`, `ID_USER`) VALUES ('".$code_trajet."','".$id_user."')";
-			
-			
-			
+			$sql = "INSERT INTO `S_INSCRIRE` (`CODETRAJET`, `ID_USER`) VALUES (".$code_trajet.",".$id_user.")";
+			$db_connection->query($sql);	
 		}
 		
 	}
