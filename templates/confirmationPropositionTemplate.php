@@ -10,7 +10,7 @@
 			<?php if(isset($_POST)){ ?>
 			<div class="row offset-1 col-11">
 				<ul class="list-unstyled">
-					<li>Date de départ : <?php echo $_POST['inscDate']." à ". $_POST['inscTime']. ?> </li>
+					<li>Date de départ : <?php echo $_POST['inscDate']." à ". $_POST['inscTime']; ?> </li>
 					<li>Lieu de départ : <?php echo $_POST['inscDepart']; ?> </li>
 					<li>Lieu d'arrivée : <?php echo $_POST['inscArrivee']; ?> </li>
 					<li>Nombre de places : <?php echo $_POST['inscPlaces']; ?> </li>

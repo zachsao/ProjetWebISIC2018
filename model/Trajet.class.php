@@ -35,6 +35,15 @@
 			$db_connection->query($sql);
 		}
 		
+		public static function creerTrajet($id_user,$depart,$arrivee,$date,$heure,$places,$commentaire){
+			$dateFormatee = $date." ".$heure.":00";
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "INSERT INTO `trajet` (`ID_USER`, `HORAIREDEPART`, `LIEUDEPART`, `LIEUARRIVEE`, `NOMBRE_PLACES`, `COMMENTAIRE`)
+				VALUES ('".$id_user."', '".$dateFormatee."', '".$depart."', '".$arrivee."', '".$places."', '".$commentaire."')";
+			$db_connection->query($sql);
+		}
+		
 	}
 	
 ?>

@@ -24,11 +24,11 @@
 	<ul class="list-unstyled noussaListe">
 		<li>Ton cours tu apprendras</li>
 		<li>Les design patterns tu utiliseras</li>
-		<li>Indenter le code tu feras</li>
-		<li>Commenter tes programmes tu n'oublieras</li>
+		<li>Ton code tu indenteras</li>
+		<li>Commenter tes programmes tu n'oublieras pas</li>
 		<li>Libérer la mémoire tu feras si l'allocation dynamique tu choisis</li>
-		<li>Le Qwerty tu préfèreras pour que ton professeur ne se fatiguera</li>
-		<li>Le debug tu utiliseras</li>
+		<li>Le Qwerty tu préfèreras pour que ton professeur ne se fatiguera pas</li>
+		<li>Le debugger tu utiliseras</li>
 		<li>Les noms de tables tu respecteras</li>
 		<li>Le MVC tu adoreras</li>
 		<li>Internet Explorer tu banniras</li>

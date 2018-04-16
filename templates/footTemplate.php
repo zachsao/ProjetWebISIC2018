@@ -9,7 +9,11 @@
           <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
             <ul class="list-inline mb-2">
               <li class="list-inline-item">
-                <a href="#">Noussa</a>
+			  <?php if(Request::getCurrentRequest()->getControllerName()=='user'){ ?>
+                <a href="?controller=user&action=noussa">Noussa</a>
+			  <?php }else{ ?>
+				<a href="?action=noussa">Noussa</a> 
+				<?php } ?>
               </li>
               <li class="list-inline-item">&sdot;</li>
               <li class="list-inline-item">

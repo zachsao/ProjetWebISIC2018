@@ -14,6 +14,14 @@ abstract class Controller extends MyObject {
 		$actionName = $this->Currentrequest->getActionName();
 		$this->$actionName($this->Currentrequest);	
 	}
+	
+	public function noussa($request){
+		if($request->getControllerName()=='user')
+			$view = new UserView($this, 'noussa'); 
+		else
+			$view = new AnonymousView($this, 'noussa'); 
+		$view->render();
+	}
 
 }
 

@@ -120,6 +120,25 @@ class UserController extends Controller {
 		$view = new UserView($this, 'proposerTrajet'); 
 		$view->render();
 	}
+	
+	public function confirmerProposition($request){
+		$depart = $_POST['inscDepart'];
+		$arrivee = $_POST['inscArrivee'];
+		$date = $_POST['inscDate'];
+		$heure = $_POST['inscTime'];
+		$places = $_POST['inscPlaces'];
+		$commentaire = $_POST['inscComment'];
+		
+		
+		$id_user = User::getUserId($_SESSION['login']);
+		Trajet::creerTrajet($id_user['id'],$depart,$arrivee,$date,$heure,$places,$commentaire);
+		
+		$view = new UserView($this, 'confirmationProposition'); 
+		$view->render();
+		
+	}
+	
+	
 
 	
 	

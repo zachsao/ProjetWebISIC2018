@@ -82,12 +82,6 @@ class AnonymousController extends Controller {
 		$view->render();
 	}
 	
-
-	public function sinscrireAuTrajet($request){
-		$view = new AnonymousView($this, 'trajets'); 
-		$view->setArg('connErrorText','Vous connecter d\'abord vous devez!');
-		$view->render();
-	}
 	
 	public function filtrerTrajets($request){
 		$depart = $_POST['filtreDepart'];
