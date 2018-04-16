@@ -8,7 +8,7 @@
 	  </div>
 	  <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 		<a class="btn btn-lg btn-outline-light" href="?controller=user&action=voirTrajets">Chercher un trajet</a>
-		<a class="btn btn-lg btn-outline-light" href="#">Proposer un trajet</a>
+		<a class="btn btn-lg btn-outline-light" href="?controller=user&action=proposerTrajet">Proposer un trajet</a>
 	  </div>
 	</div>
   </div>

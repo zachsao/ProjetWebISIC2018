@@ -23,6 +23,16 @@
 			
 		}
 		
+		public static function getTrajetsUtilisateur($id){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "SELECT LIEUDEPART, LIEUARRIVEE, HORAIREDEPART, NOMBRE_PLACES FROM `trajet` WHERE ID_USER='".$id."'";
+			
+			$req = $db_connection->query($sql);
+			return $req->fetchAll();
+			
+		}
+		
 		public static function inscriptionTrajet($id_user, $code_trajet){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

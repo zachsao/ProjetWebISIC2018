@@ -25,6 +25,11 @@ class UserController extends Controller {
 	}
 	
 	public function profilTrajet($request){
+		$id_user = User::getUserId($_SESSION['login']);
+		$trajets = Trajet::getTrajetsUtilisateur($id_user['id']);
+		
+		$request->write('trips',$trajets);
+		
 		$view = new UserView($this, 'profilTrajet'); 
 		$view->render();
 	}
