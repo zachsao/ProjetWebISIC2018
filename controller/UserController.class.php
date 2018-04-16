@@ -102,7 +102,7 @@ class UserController extends Controller {
 		if(isset($_GET['trips']))
 			unset($_GET['trips']);
 		
-		$trajets=( Trajet::getTrajet($date,$depart,$arrivee));
+		$trajets=( Trajet::getTrajetFromFiltre($date,$depart,$arrivee));
 		$request->write('trips',$trajets);
 		//print_r($_GET['trips']);
 		$request->write('action','voirTrajets');

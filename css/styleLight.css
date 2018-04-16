@@ -262,3 +262,38 @@ h3{
 	font-style:italic;
 	font-size:1.1em;
 }
+
+/******************************Proposer un trajet***************************************/
+
+
+#creerTrajetBouton input{
+	margin:auto;
+}
+
+/******************************Noussa***************************************/
+.noussaPortrait{
+	text-align:center;
+}
+
+.noussaPortrait > div{
+	display:inline-block;
+	border:2px solid gray;
+	text-align:center;
+	font-style:italic;
+}
+
+.noussaImg{
+	height:150px;
+	width:150px;
+	border-radius:100%;
+}
+
+.noussaListe{
+	text-align:center;
+	font-size:2em;
+	font-family:Brush Script MT, Brush Script Std, cursive;
+}
+
+.noussaMap iframe {
+	width:100%;
+}

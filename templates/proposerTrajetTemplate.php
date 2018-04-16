@@ -1,10 +1,13 @@
-<div class="row">
-				</br>
-				<div class="offset-2 col-md-8 "> <h1>Proposez un trajet</h1> </div>
+			<!--Proposer un trajet-->	
+			</br></br>
+			<div class="row">
+				<div class="offset-2 col-md-8 "> 
+					<h1>Proposez un trajet</h1> 
+				</div>
 			</div>
 			</br></br></br>
 			
-			<form action="#" class="form-horizontal col-md-12 " method="POST">
+			<form action="#" class="form-horizontal offset-1 col-md-10 " method="POST">
 				
 				<div class="row">
 					<div class="form-group requiredField col-md-12 ">
@@ -44,7 +47,7 @@
                 </div>
 				
 				<div class="row">
-					<div class="form- requiredField col-md-12 ">
+					<div class="form-group requiredField col-md-12 ">
 						<label for="text" class="col-md-3 control-label" style="display:inline-block">Nombre de place :</label>
 						<div class="col-md-8" style="display:inline-block">
 							<input type="number" class="form-control" placeholder="Combien de personnes voussa emmener ?" name="inscPlaces" required>
@@ -62,7 +65,10 @@
                 </div>
 				
 				</br></br>
-				<input class="btn btn-primary" type="submit" value="Valider" />
+				<div class="row" id="creerTrajetBouton">
+					<input class="btn btn-success" type="submit" value="Valider" />
+				</div>
+				</br></br>
 				
             </form>
 			

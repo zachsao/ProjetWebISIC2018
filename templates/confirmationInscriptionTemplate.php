@@ -1,3 +1,8 @@
+<?php
+	$idTrajet = $_GET['idTrajet'];
+	$trajet = Trajet::getTrajet($idTrajet);
+?>
+
 <div class="container col-12" id="confirmationTrajet">
 	<br><br>
 	<div class="card bg-light w-50">
@@ -9,10 +14,9 @@
 			</div>
 			<div class="row offset-1 col-11">
 				<ul class="list-unstyled">
-					<li>Date de départ : </li>
-					<li>Lieu de départ : </li>
-					<li>Lieu d'arrivée : </li>
-					<li>Nom du pilote : </li>
+					<li>Date de départ : <?php echo $trajet[0][2] ?> </li>
+					<li>Lieu de départ :  <?php echo $trajet[0][1] ?> </li>
+					<li>Lieu d'arrivée :  <?php echo $trajet[0][0] ?> </li>
 				</ul>
 			</div>	
 		</div>
