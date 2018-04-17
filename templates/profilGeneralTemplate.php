@@ -1,4 +1,4 @@
-
+<?php $controller = Request::getCurrentRequest()->getControllerName(); ?>
 	</br>
 	<h1> Bonjour <?php echo $_SESSION['login'];?> ! </h1> 
 	</br>
@@ -10,11 +10,11 @@
 		 <div class="row">
 		  <div class="col-3">
 			<div class="btn-group-vertical col-12" >
-				<a href="?controller=user&action=profilGeneral" class="col-12"><button type="button" class="btn btn-info active">Mon Profil</button></a>
-				<a href="?controller=user&action=profilTrajet" class="col-12"><button type="button" class="btn btn-info col-12">Mes Trajets</button></a>
-				<a href="?controller=user&action=profilGroupe" class="col-12"><button type="button" class="btn btn-info col-12">Mes Groupes</button></a>
-				<a href="?controller=user&action=profilVehicule" class="col-12"><button type="button" class="btn btn-info col-12">Mon Véhicule</button></a>
-				<a href="?controller=user&action=profilParametre" class="col-12"><button type="button" class="btn btn-info col-12">Paramètres</button></a>
+				<a href="?controller=<?php echo $controller ?>&action=profilGeneral" class="col-12"><button type="button" class="btn btn-info active">Mon Profil</button></a>
+				<a href="?controller=<?php echo $controller ?>&action=profilTrajet" class="col-12"><button type="button" class="btn btn-info col-12">Mes Trajets</button></a>
+				<a href="?controller=<?php echo $controller ?>&action=profilGroupe" class="col-12"><button type="button" class="btn btn-info col-12">Mes Groupes</button></a>
+				<a href="?controller=<?php echo $controller ?>&action=profilVehicule" class="col-12"><button type="button" class="btn btn-info col-12">Mon Véhicule</button></a>
+				<a href="?controller=<?php echo $controller ?>&action=profilParametre" class="col-12"><button type="button" class="btn btn-info col-12">Paramètres</button></a>
 			</div>
 		  </div>
 		  
@@ -25,7 +25,7 @@
 			
 			<!-- Mon Profil -->
 				</br>
-				<form class="form-horizontal col-lg-12"  action="?controller=user&action=changerInfoGeneral" method="POST">
+				<form class="form-horizontal col-lg-12"  action="?controller=<?php echo $controller ?>&action=changerInfoGeneral" method="POST">
 				  
 				  
 				  <div class="row"> <!--grisé car pas changeable-->

@@ -25,4 +25,14 @@ class AdminController extends UserController {
 	}
 	
 	
+	public function profilTrajet($request){
+		$id_user = User::getUserId($_SESSION['login']);
+		$trajets = Trajet::getTrajetsUtilisateur($id_user['id']);
+		
+		$request->write('trips',$trajets);
+		
+		$view = new AdminView($this, 'adminTrajets'); 
+		$view->render();
+	}
+	
 }
