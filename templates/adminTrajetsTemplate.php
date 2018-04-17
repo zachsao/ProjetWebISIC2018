@@ -163,41 +163,7 @@
 						</div>
 					</div>
 					
-					<div class="row">
-						<div class="col-lg-3 trajetConducteur">
-							<p><strong>Conducteur</strong> : Nom et Prenom</p>
-							<img src="img/logoProfil.png">
-						</div>
-						<div class="col-lg-6 trajetCaracteristiques">
-							<p><strong>Date</strong> : 01.01.2018 à 16h</p>
-							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
-							<a href="?controller=admin&action=confirmerTrajet" class="btn btn-primary btn-success"> S'inscrire à ce trajet</a>
-							<a href="#" class="btn btn-primary">Modifier ce trajet</a>
-							<a href="#" class="btn btn-danger boutonSupprimerTrajet">Supprimer ce trajet</a>
-						</div>
-						<div class="col-lg-3">
-							<p><strong>Nombre de place restantes :</strong> </p>
-							<p class="trajetNombrePlaceRestante"> 0 </p>
-						</div>
-					</div>
 					
-					<div class="row">
-						<div class="col-lg-3 trajetConducteur">
-							<p><strong>Conducteur</strong> : Nom et Prenom</p>
-							<img src="img/logoProfil.png">
-						</div>
-						<div class="col-lg-6 trajetCaracteristiques">
-							<p><strong>Date</strong> : 01.01.2018 à 17h</p>
-							<p><strong>Trajet de :</strong> LieuDepart - Etape1 - Etape2 - LieuArrivé</p>
-							<a href="?controller=admin&action=confirmerTrajet" class="btn btn-primary btn-success"> S'inscrire à ce trajet</a>
-							<a href="#" class="btn btn-primary">Modifier ce trajet</a>
-							<a href="#" class="btn btn-danger boutonSupprimerTrajet">Supprimer ce trajet</a>
-						</div>
-						<div class="col-lg-3">
-							<p><strong>Nombre de place restantes :</strong> </p>
-							<p class="trajetNombrePlaceRestante"> 1 </p>
-						</div>
-					</div>
 				</div>
 				<div class="row" id="pagination">
 				  <ul class="pagination pagination-lg" >

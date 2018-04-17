@@ -9,8 +9,8 @@ class UserController extends Controller {
 		if(isset($_POST['inscLogin'])){
 			$_SESSION['login'] = $_POST['inscLogin'];
 			$_SESSION['pwd'] = $_POST['inscPassword'];
-			
 		}
+		
 	}
 	
 	public function defaultAction($request){
@@ -44,15 +44,6 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
-
-	public function validateConnexion($request){
-		$view = new UserView($this, 'profil'); 
-		$view->render();
-	}
-	
-	public function validateInscription($request){
-		$this->defaultAction($request);
-	}
 	
 
 	public function profilParametre($request){

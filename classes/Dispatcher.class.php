@@ -15,6 +15,10 @@ class Dispatcher extends MyObject {
 				return new UserController($request);
 				
 				break;
+			case 'admin':
+				return new AdminController($request);
+				
+				break;
 		}
 		
 	}
