@@ -80,7 +80,7 @@
 				  </div>
 				  
 				  </br></br>
-				  <input class="pull-right btn btn-default btn-info" type="submit" value="Valider mes changements" />
+				  <input class="pull-right btn btn-default btn-info" type="submit" value="Valider mes changements" disabled />
 				 
 			  </div>
 			  
