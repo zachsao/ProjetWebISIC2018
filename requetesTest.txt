@@ -1,2 +1,4 @@
 //modifier horaire trajet
 UPDATE `trajet` SET `HORAIREDEPART` = '2018-04-11 20:00:00' WHERE `trajet`.`CODETRAJET` = 162;
+
+DELETE FROM `trajet` WHERE `trajet`.`CODETRAJET` = 178

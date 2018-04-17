@@ -143,6 +143,11 @@ class UserController extends Controller {
 		
 	}
 	
+	public function supprimerTrajet($request){
+		Trajet::suppressionTrajet($_GET['idTrajet']);
+		$this->profilTrajet($request);
+	}
+	
 	
 
 	

@@ -3,6 +3,8 @@
 		
 		public $trajets;
 		
+		
+		//retourne les trajets correspondants aux filtres demandés
 		public static function getTrajetFromFiltre($date,$depart,$arrivee){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -13,6 +15,7 @@
 			
 		}
 		
+		//retourne le trajet correspondant au code_trajet
 		public static function getTrajet($id){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,16 +26,18 @@
 			
 		}
 		
+		//retourne les trajets de l'utilisateur
 		public static function getTrajetsUtilisateur($id){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT LIEUDEPART, LIEUARRIVEE, HORAIREDEPART, NOMBRE_PLACES FROM `trajet` WHERE ID_USER='".$id."'";
+			$sql = "SELECT LIEUDEPART, LIEUARRIVEE, HORAIREDEPART, NOMBRE_PLACES, CODETRAJET FROM `trajet` WHERE ID_USER='".$id."'";
 			
 			$req = $db_connection->query($sql);
 			return $req->fetchAll();
 			
 		}
 		
+		//ajoute un couple id_user/code_trajet dans la bdd
 		public static function inscriptionTrajet($id_user, $code_trajet){
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -45,6 +50,7 @@
 			$db_connection->query($sql);
 		}
 		
+		//ajoute un trajet dans la bdd
 		public static function creerTrajet($id_user,$depart,$arrivee,$date,$heure,$places,$commentaire){
 			$dateFormatee = $date." ".$heure.":00";
 			$db_connection = DatabasePDO::getCurrentPDO();
@@ -54,6 +60,15 @@
 			$db_connection->query($sql);
 		}
 		
+		//supprime un trajet de la bdd
+		public static function suppressionTrajet($id_trajet){
+			
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "DELETE FROM `TRAJET` WHERE CODETRAJET=".$id_trajet;
+			
+			$db_connection->query($sql);
+		}
 	}
 	
 ?>
