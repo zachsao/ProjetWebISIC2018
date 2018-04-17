@@ -11,6 +11,7 @@ class View extends MyObject {
 		$this->templateNames['head'] = 'head';
 		$this->templateNames['top'] = 'top';
 		$this->templateNames['connectedTop'] = 'connectedTop';
+		$this->templateNames['adminTop'] = 'adminTop';
 		$this->templateNames['menu'] = 'menu';
 		$this->templateNames['foot'] = 'foot';
 		$this->templateNames['content'] = $templateName;
