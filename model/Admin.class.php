@@ -21,6 +21,14 @@
 			return $req->fetchAll();
 		}
 		
+		public static function changeisAdmin($id_user,$is_admin){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "UPDATE `UTILISATEUR` SET IS_ADMIN=".$is_admin." WHERE ID_USER=".$id_user;
+			$db_connection->query($sql);
+			
+		}
+		
 		
 	}
 	

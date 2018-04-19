@@ -58,7 +58,7 @@
 							else {
 								echo User::getUserData($_SESSION["login"])["nom"];
 							}
-						?>">
+						?>" required>
 					  </div>
 					</div>
 				  </div>
@@ -73,7 +73,7 @@
 							else {
 								echo User::getUserData($_SESSION["login"])["prenom"];
 							}
-						?>"> 
+						?>" required> 
 					  </div>
 					</div>
 				  </div>
@@ -88,7 +88,7 @@
 							else {
 								echo User::getUserData($_SESSION["login"])["mail"];
 							}
-						?>">
+						?>" required>
 					  </div>
 					</div>
 				  </div>
@@ -103,7 +103,7 @@
 							else {
 								echo User::getUserData($_SESSION["login"])["phone"];
 							}
-						?> "> 
+						?> " required> 
 					  </div>
 					</div>
 				  </div>

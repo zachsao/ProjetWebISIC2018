@@ -29,8 +29,8 @@
 								<h5 class="card-title">Nom: <?php if(isset($_GET['nom'])) echo $_GET['nom']; ?> <br><br> Prénom: <?php if(isset($_GET['prenom'])) echo $_GET['prenom']; ?> <br><br> Email: <?php if(isset($_GET['mail'])) echo $_GET['mail']; ?></h5>
 								<p class="card-text"> Cet utilisateur est un :   <?php if(isset($_GET['isadmin']))echo $_GET['isadmin']; ?> </p> <!-- php -->
 								<ul class="list-unstyled">
-									<li><a href="#" class="btn btn-success"><span class="none"></span> Promouvoir en tant qu'admin</a></li>
-									<li><a href="#" class="btn btn-warning"><span class="none"></span> Destituer en tant que simple utilisateur</a></li>
+									<li><a href="?controller=admin&action=promouvoir" class="btn btn-success"><span class="none"></span> Promouvoir en tant qu'admin</a></li>
+									<li><a href="?controller=admin&action=destituer" class="btn btn-warning"><span class="none"></span> Destituer en tant que simple utilisateur</a></li>
 								</ul>
 								<p class="card-text"> Vous pouvez supprimer cet utilsateur. <strong>Attention !</strong> Cette action est définitive. </p> 
 								<ul class="list-unstyled">

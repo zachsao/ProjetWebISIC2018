@@ -52,7 +52,7 @@ class UserController extends Controller {
 	}
 	
 	public function changerInfoGeneral($request){
-		if(empty($_POST)){
+		if(!empty($_POST)){
 			$login = $_SESSION['login'];
 			$nom = $_POST['nom'];
 			$prenom = $_POST['prenom'];
