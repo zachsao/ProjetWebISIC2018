@@ -1,13 +1,11 @@
 <!--Gestion des utilisateurs : dédiée aux administrateurs-->
-	</br>
-	<h1> Bonjour <?php echo $_SESSION['login'];?> ! </h1> 
-	</br>
+
 	
 	<div class="container col-12">
-		</br>
+		</br></br></br>
 	
 		<!-- Barre de naviguation verticale -->		  
-		 <div class="col-9">
+		 <div class="offset-1 col-10">
 				<div class="tab-content" id="nav-tabContent">
 					<form class="form-row" method="POST" action="?controller=admin&action=utilisateur">
 						<div class="offset-1 col-8">
@@ -46,7 +44,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	
 	
 						<!--<datalist id="listeUtilisateurs">

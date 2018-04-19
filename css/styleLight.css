@@ -173,6 +173,13 @@ h3{
 	margin:auto;
 }
 
+/***Gestion utilisateurs***/
+
+#gestionUser li{
+	margin-bottom: 10px;
+	text-align:center;
+}
+
 /******************************Chercher un trajet***************************************/
 
 #wallPaperTrajet{
