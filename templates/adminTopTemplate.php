@@ -6,6 +6,7 @@
 		<div class="collapse navbar-collapse col-10 justify-content-end" id="navbarLinks">
 			<a href="index.php?controller=admin&action=voirTrajets"><button class="btn btn-outline-secondary" type="button">Chercher un trajet</button></a>
 			<a href="index.php?controller=admin&action=proposerTrajet"><button class="btn btn-outline-secondary" type="button">Proposer un trajet</button></a>
+			<a href="?controller=admin&action=profilGestionUser" ><button type="button" class="btn btn-outline-secondary">Gestion des Utilisateur</button></a>
 			<a href="index.php?controller=admin"><button class="btn btn-outline-secondary" type="button">Mon Compte</button></a>
 			<a href="index.php?controller=admin&action=deconnexion"><button class="btn btn-outline-danger" type="button">Deconnexion</button></a>
 		</div>

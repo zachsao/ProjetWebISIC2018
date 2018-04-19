@@ -17,8 +17,11 @@ class AdminController extends Controller {
 	//supprime l'utilisateur de la bdd
 	public function bloquerUtilisateur($request){
 		//récupere le login user depuis un champ de recherche
-		//$login = $_POST($login);
-		//Admin::supprimer($login);
+		$id=$_SESSION['idUser'];
+		//Trajet::desinscriptionTrajet($id);
+		//Admin::supprimer($id);
+		//unset($_SESSION['idUser']);
+		$this->profilGestionUser($request);
 	}
 	
 	//l'adresse IP ne peut plus creer de compte ni se connecter
@@ -36,6 +39,26 @@ class AdminController extends Controller {
 		//a faire
 	}
 	
+	//recupere l'utilisateur dont le pseudo est $login
+	public function utilisateur($request){
+		$user = Admin::getUser($_POST['utilisateur']);
+		if(!empty($user)){
+			$request->write('nom',$user[0]['NOM']);
+			$request->write('prenom',$user[0]['PRENOM']);
+			$request->write('mail',$user[0]['EMAIL']);
+			$_SESSION['idUser']=$user[0]['ID_USER'];
+			if($user[0]['IS_ADMIN']!=1)
+				$request->write('isadmin',"utilisateur simple");
+			else 
+				$request->write('isadmin',"administrateur");
+			
+			$this->profilGestionUser($request);
+		}else{
+			$view = new AdminView($this,'adminProfilGestionUtilisateur');
+			$view->setArg('userErrorText','Utilisateur inexistant');
+			$view->render();
+		}
+	}
 	///////////////////////////////actions user normal///////////////////////////
 	
 	
@@ -56,7 +79,7 @@ class AdminController extends Controller {
 		
 		$request->write('trips',$trajets);
 		
-		$view = new AdminView($this, 'adminTrajets'); 
+		$view = new AdminView($this, 'profilTrajet'); 
 		$view->render();
 	}
 	
@@ -74,6 +97,11 @@ class AdminController extends Controller {
 
 	public function profilParametre($request){
 		$view = new AdminView($this, 'profilParametre'); 
+		$view->render();
+	}
+	
+	public function profilGestionUser($request){
+		$view = new AdminView($this, 'adminProfilGestionUtilisateur'); 
 		$view->render();
 	}
 	

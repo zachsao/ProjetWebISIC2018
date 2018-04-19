@@ -1,3 +1,4 @@
+<?php $controller = Request::getCurrentRequest()->getControllerName(); ?>
 			<!--Proposer un trajet-->	
 			</br></br>
 			<div class="row">
@@ -7,7 +8,7 @@
 			</div>
 			</br></br></br>
 			
-			<form action="?controller=user&action=confirmerProposition" class="form-horizontal offset-1 col-md-10 " method="POST">
+			<form action="?controller=<?php echo $controller ?>&action=confirmerProposition" class="form-horizontal offset-1 col-md-10 " method="POST">
 				
 				<div class="row">
 					<div class="form-group requiredField col-md-12 ">

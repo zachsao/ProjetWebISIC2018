@@ -1,3 +1,4 @@
+<?php $controller = Request::getCurrentRequest()->getControllerName(); ?>
 <div class="container col-12" id="confirmationTrajet">
 	<br><br>
 	<div class="card bg-light w-50">
@@ -18,8 +19,8 @@
 			</div>	
 			<?php } ?>
 		</div>
-		<a href="?controller=user&action=accueil" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour à l'accueil</a>
-		<a href="?controller=user&action=profilTrajet" class="btn btn-success pull-right"><span class="glyphicon glyphicon-road"></span> Voir mes trajets</a>
+		<a href="?controller=<?php echo $controller ?>&action=accueil" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour à l'accueil</a>
+		<a href="?controller=<?php echo $controller ?>&action=profilTrajet" class="btn btn-success pull-right"><span class="glyphicon glyphicon-road"></span> Voir mes trajets</a>
 	  </div>
 	</div>
 </div>

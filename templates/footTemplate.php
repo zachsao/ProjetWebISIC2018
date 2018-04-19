@@ -1,3 +1,4 @@
+<?php $controller = Request::getCurrentRequest()->getControllerName(); ?>
 <!--<div id='footer'>
 	<p>infos légales</p>
 </div>-->
@@ -10,7 +11,7 @@
             <ul class="list-inline mb-2">
               <li class="list-inline-item">
 			  <?php if(Request::getCurrentRequest()->getControllerName()=='user'){ ?>
-                <a href="?controller=user&action=noussa">Noussa</a>
+                <a href="?controller=<?php echo $controller ?>&action=noussa">Noussa</a>
 			  <?php }else{ ?>
 				<a href="?action=noussa">Noussa</a> 
 				<?php } ?>

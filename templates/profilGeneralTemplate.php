@@ -10,11 +10,12 @@
 		 <div class="row">
 		  <div class="col-3">
 			<div class="btn-group-vertical col-12" >
-				<a href="?controller=<?php echo $controller ?>&action=profilGeneral" class="col-12"><button type="button" class="btn btn-info active">Mon Profil</button></a>
+				<a href="?controller=<?php echo $controller ?>" class="col-12"><button type="button" class="btn btn-info active">Mon Profil</button></a>
 				<a href="?controller=<?php echo $controller ?>&action=profilTrajet" class="col-12"><button type="button" class="btn btn-info col-12">Mes Trajets</button></a>
 				<a href="?controller=<?php echo $controller ?>&action=profilGroupe" class="col-12"><button type="button" class="btn btn-info col-12">Mes Groupes</button></a>
 				<a href="?controller=<?php echo $controller ?>&action=profilVehicule" class="col-12"><button type="button" class="btn btn-info col-12">Mon Véhicule</button></a>
 				<a href="?controller=<?php echo $controller ?>&action=profilParametre" class="col-12"><button type="button" class="btn btn-info col-12">Paramètres</button></a>
+				
 			</div>
 		  </div>
 		  

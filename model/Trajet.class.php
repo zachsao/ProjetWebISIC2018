@@ -49,6 +49,15 @@
 			$sql = "UPDATE `TRAJET` SET NOMBRE_PLACES = (NOMBRE_PLACES-1) WHERE CODETRAJET=".$code_trajet;
 			$db_connection->query($sql);
 		}
+		//supprime les couples id_user/code_trajet dans la bdd
+		public static function desinscriptionTrajet($id_user){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//associe un utilisateur à un trajet
+			$sql = "DELETE FROM `S_INSCRIRE` WHERE ID_USER=".$id_user;
+			$db_connection->query($sql);	
+		}
+		
 		
 		//ajoute un trajet dans la bdd
 		public static function creerTrajet($id_user,$depart,$arrivee,$date,$heure,$places,$commentaire){
