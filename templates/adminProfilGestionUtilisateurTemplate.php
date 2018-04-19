@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 <!--Gestion des utilisateurs : dédiée aux administrateurs-->	
+||||||| merged common ancestors
+<!--Gestion des utilisateurs : dédiée aux administrateurs-->
+	</br>
+	<h1> Bonjour <?php echo $_SESSION['login'];?> ! </h1> 
+	</br>
+	
+=======
+<!--Gestion des utilisateurs : dédiée aux administrateurs-->
+
+	
+>>>>>>> 7d194e300adea8f4a37d21a6f669f1f34dda0a09
 	<div class="container col-12">
-		</br>
+		</br></br></br>
 	
 		<!-- Barre de naviguation verticale -->		  
-		 <div class="col-9">
+		 <div class="offset-1 col-10">
 				<div class="tab-content" id="nav-tabContent">
 					<form class="form-row" method="POST" action="?controller=admin&action=utilisateur">
 						<div class="offset-1 col-8">
@@ -52,7 +64,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	
 	
 						

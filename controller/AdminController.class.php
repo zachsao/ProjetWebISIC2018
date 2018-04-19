@@ -20,17 +20,17 @@ class AdminController extends Controller {
 	}
 	//supprime l'utilisateur de la bdd
 	public function bloquerUtilisateur($request){
-		//récupere le login user depuis un champ de recherche
+		
 		$id=$_SESSION['idUser'];
-		//Trajet::desinscriptionTrajet($id);
-		//Admin::supprimer($id);
-		//unset($_SESSION['idUser']);
+		Trajet::desinscriptionTrajet($id);
+		Admin::supprimer($id);
+		unset($_SESSION['idUser']);
 		$this->profilGestionUser($request);
 	}
 	
 	//l'adresse IP ne peut plus creer de compte ni se connecter
 	public function bloquerIP($request){
-		//a faire
+		
 	}
 	
 	//promouvoir un utilisateur au rand d'admin

@@ -71,7 +71,7 @@
 		//modifie les infos d'un user
 		public static function changeUserProfilInfo($login,$nom,$prenom,$mail,$phone){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'UPDATE `UTILISATEUR` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '";';
+			$sql = 'UPDATE `UTILISATEUR` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '"';
 			$db_connection->query($sql) or die ("sql query error ! request : " . $sql);
 		}
 		
