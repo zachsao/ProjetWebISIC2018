@@ -1,0 +1,70 @@
+============================== requetes de la classe Admin: ===================================
+
+//supprime un utilisateur 
+"DELETE FROM `UTILISATEUR` WHERE ID_USER=".$id;
+
+///recupere les infos d'un utilisateur
+"SELECT NOM, PRENOM, EMAIL, IS_ADMIN, ID_USER FROM `UTILISATEUR` WHERE PSEUDO='".$login."'";
+
+//modifie le champ is_admin
+"UPDATE `UTILISATEUR` SET IS_ADMIN=".$is_admin." WHERE ID_USER='".$id_user."'";
+
+//recupere tous les logins existants d'utilisateurs
+"SELECT PSEUDO FROM `UTILISATEUR`";
+
+
+										
+============================= requetes de la classe Trajet: ==================================
+										
+										
+									
+//retourne les trajets correspondants aux filtres demandés
+'SELECT * FROM `trajet` WHERE LIEUDEPART = "'.$depart.'" AND LIEUARRIVEE = "'.$arrivee.'" AND HORAIREDEPART LIKE "'.$date.'%"';
+
+//retourne le trajet correspondant au code_trajet
+"SELECT LIEUARRIVEE, LIEUDEPART, HORAIREDEPART FROM `trajet` WHERE CODETRAJET='".$id."'";
+
+//retourne les trajets de l'utilisateur
+"SELECT LIEUDEPART, LIEUARRIVEE, HORAIREDEPART, NOMBRE_PLACES, CODETRAJET FROM `trajet` WHERE ID_USER='".$id."'";
+
+//ajoute un couple id_user/code_trajet dans la bdd
+"INSERT INTO `S_INSCRIRE` (`CODETRAJET`, `ID_USER`) VALUES (".$code_trajet.",".$id_user.")";
+
+//supprime les couples id_user/code_trajet dans la bdd
+"DELETE FROM `S_INSCRIRE` WHERE ID_USER=".$id_user;
+
+//ajoute un trajet dans la bdd
+"INSERT INTO `trajet` (`ID_USER`, `HORAIREDEPART`, `LIEUDEPART`, `LIEUARRIVEE`, `NOMBRE_PLACES`, `COMMENTAIRE`)
+				VALUES ('".$id_user."', '".$dateFormatee."', '".$depart."', '".$arrivee."', '".$places."', '".$commentaire."')";
+				
+
+//met à jour le nombre de places restantes
+"UPDATE `TRAJET` SET NOMBRE_PLACES = (NOMBRE_PLACES-1) WHERE CODETRAJET=".$code_trajet;
+
+//supprime les couples id_user/code_trajet dans la bdd
+"DELETE FROM `S_INSCRIRE` WHERE ID_USER.`S_INSCRIRE`=".$id_user;
+
+//supprime un trajet de la bdd
+"DELETE FROM `TRAJET` WHERE CODETRAJET=".$id_trajet;				
+		
+		
+============================= requetes de la classe User: ==================================
+
+//recupere les pseudos existants
+'SELECT PSEUDO FROM `UTILISATEUR`';
+
+'SELECT PSEUDO, PWD FROM `UTILISATEUR`';
+
+//ajoute un utilisateur
+"INSERT INTO `UTILISATEUR` (`PSEUDO`, `PWD`, `NOM`, `PRENOM`, `EMAIL`, `PROMO`, `SERVICE` ) 
+				VALUES ('".$login."','".$pwd."','".$nom."','".$prenom."','".$mail."',".$promo.",'".$service."')";
+
+//recupere les infos d'un user donné
+'SELECT NOM, PRENOM, EMAIL, TELEPHONE FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
+
+//modifie les infos d'un user
+'UPDATE `UTILISATEUR` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '"';
+
+//id user
+'SELECT ID_USER FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
+

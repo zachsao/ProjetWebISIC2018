@@ -42,7 +42,7 @@
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//associe un utilisateur à un trajet
-			$sql = "INSERT INTO `S_INSCRIRE` (`CODETRAJET`, `ID_USER`) VALUES (".$code_trajet.",".$id_user.")";
+			$sql = "INSERT INTO `s_inscrire` (`CODETRAJET`, `ID_USER`) VALUES (".$code_trajet.",".$id_user.")";
 			$db_connection->query($sql);	
 			
 			//met à jour le nombre de places restantes
@@ -54,7 +54,7 @@
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//associe un utilisateur à un trajet
-			$sql = "DELETE FROM `S_INSCRIRE` WHERE ID_USER=".$id_user;
+			$sql = "DELETE FROM `s_inscrire` WHERE ID_USER=".$id_user;
 			$db_connection->query($sql);	
 		}
 		
@@ -74,7 +74,7 @@
 			
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "DELETE FROM `TRAJET` WHERE CODETRAJET=".$id_trajet;
+			$sql = "DELETE FROM `trajet` WHERE CODETRAJET=".$id_trajet;
 			
 			$db_connection->query($sql);
 		}

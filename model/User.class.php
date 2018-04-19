@@ -10,7 +10,7 @@
 				);
 			//connexion à la base de donnée
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT PSEUDO FROM `UTILISATEUR`';
+			$sql = 'SELECT PSEUDO FROM `utilisateur`';
 			foreach ($db_connection->query($sql) as $row) {
 				$users[]=$row['PSEUDO'];
 			}
@@ -32,7 +32,7 @@
 				);
 			//connexion à la base de donnée
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT PSEUDO, PWD FROM `UTILISATEUR`';
+			$sql = 'SELECT PSEUDO, PWD FROM `utilisateur`';
 			foreach ($db_connection->query($sql) as $row) {
 				$users[$row['PSEUDO']]=$row['PWD'];
 			}
@@ -51,7 +51,7 @@
 			if(!is_int($promo)) $promo = 0;
 			$db_connection = DatabasePDO::getCurrentPDO();
 			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO `UTILISATEUR` (`PSEUDO`, `PWD`, `NOM`, `PRENOM`, `EMAIL`, `PROMO`, `SERVICE` ) 
+			$sql = "INSERT INTO `utilisateur` (`PSEUDO`, `PWD`, `NOM`, `PRENOM`, `EMAIL`, `PROMO`, `SERVICE` ) 
 				VALUES ('".$login."','".$pwd."','".$nom."','".$prenom."','".$mail."',".$promo.",'".$service."')";
 			return $db_connection->query($sql);
 			
@@ -61,7 +61,7 @@
 		//recupere les infos d'un user
 		public static function getUserData($login){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT NOM, PRENOM, EMAIL, TELEPHONE FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
+			$sql = 'SELECT NOM, PRENOM, EMAIL, TELEPHONE FROM `utilisateur` WHERE PSEUDO="'.$login.'"';
 			foreach ($db_connection->query($sql) as $row) {
 				return array("nom"=>$row['NOM'], "prenom"=>$row['PRENOM'], "mail"=>$row['EMAIL'], "phone"=>$row['TELEPHONE']);
 			}
@@ -71,7 +71,7 @@
 		//modifie les infos d'un user
 		public static function changeUserProfilInfo($login,$nom,$prenom,$mail,$phone){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'UPDATE `UTILISATEUR` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '"';
+			$sql = 'UPDATE `utilisateur` SET `NOM` = "'. $nom. '", `PRENOM` = "'. $prenom . '",`EMAIL`="'.$mail.'",`TELEPHONE`="'.$phone.'" WHERE `PSEUDO` = "'. $login . '"';
 			$db_connection->query($sql) or die ("sql query error ! request : " . $sql);
 		}
 		
@@ -79,7 +79,7 @@
 		
 		public static function getUserId($login){
 			$db_connection = DatabasePDO::getCurrentPDO();
-			$sql = 'SELECT ID_USER FROM `UTILISATEUR` WHERE PSEUDO="'.$login.'"';
+			$sql = 'SELECT ID_USER FROM `utilisateur` WHERE PSEUDO="'.$login.'"';
 			foreach ($db_connection->query($sql) as $row) {
 				return array("id"=>$row['ID_USER']);
 			}
