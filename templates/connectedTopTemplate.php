@@ -1,4 +1,4 @@
-<!-- Navigation -->	
+<!-- Navigation pour les utilisateurs connectés -->	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
 		<div class="col-2">
 			<a class="navbar-brand" href="index.php?controller=user&action=accueil">CarCar Binks</a>

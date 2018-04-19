@@ -18,11 +18,11 @@ class AdminController extends Controller {
 		$view = new AdminView($this, 'adminProfilGestionUtilisateur'); 
 		$view->render();
 	}
-	//supprime l'utilisateur de la bdd
+	//supprime l'utilisateur de la bdd s'il n'est pas inscrit a un trajet
 	public function bloquerUtilisateur($request){
 		
 		$id=$_SESSION['idUser'];
-		Trajet::desinscriptionTrajet($id);
+		//Trajet::desinscriptionTrajet($id);
 		Admin::supprimer($id);
 		unset($_SESSION['idUser']);
 		$this->profilGestionUser($request);
@@ -30,7 +30,7 @@ class AdminController extends Controller {
 	
 	//l'adresse IP ne peut plus creer de compte ni se connecter
 	public function bloquerIP($request){
-		
+		//TODO
 	}
 	
 	//promouvoir un utilisateur au rand d'admin

@@ -1,17 +1,13 @@
+<!-- Page d'inscription et de connexion -->   
    <div id="pageConnexion" class="col-md-12">
-      
 	  <div class="container">
 		</br>
-	  
-		<div class="col-md-6 " style="display:inline-block" id="inscriptionForm">
-			
-			
-			<div class="row">
+		<div class="col-md-6 " style="display:inline-block" id="inscriptionForm">										<!--Partie Inscription -->
+			<div class="row">													
 				</br>
-				<div class="offset-2 col-md-8 "> <h1>Inscription</h1> </div>
+				<div class="offset-2 col-md-8 "> <h1>Inscription</h1> </div>											<!-- Titre en haut -->
 			</div>
 			</br></br></br>
-			
 			<form action="index.php?action=validateInscription" class="form-horizontal col-md-12 " method="POST">
 				
 				<div class="row">
@@ -101,7 +97,7 @@
 			
 		</div>
 		                  
-		<div class="col-md-5" style="display:inline-block; vertical-align:top;">
+		<div class="col-md-5" style="display:inline-block; vertical-align:top;">													<!--Partie Connexion -->
 			<div class="row">
 				</br>
 				<div class="offset-2 col-md-8"> <h1>Déja inscrit ?</h1> </div>
