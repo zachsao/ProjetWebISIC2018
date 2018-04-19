@@ -17,5 +17,13 @@ Vous pouvez aussi accéder à la page décrivant qui nous sommes en bas du site.
 Si vous êtes un administrateur du site, il vous sera possible de supprimer un trajet, supprimer un utilisateur, promouvoir au rang d'administrateur un utilisateur ou destituer un administrateur au rang d'utilisateur normal.
 
 
+Astuces : 
+Vous pouvez vous connecter en tant qu'utilisateur commun avec les identifiants suivants : 
+Login : jarjar
+Mot de passe : jarjar 
 
+Vous pouvez vous connecter en tant qu'administrateur avec les identifiants suivants : 
+Login : root
+Mot de passe : root 
 
+Toutes les requetes SQL sont dans le dossier : sql/requetes.txt

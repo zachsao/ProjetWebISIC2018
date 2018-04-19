@@ -1,3 +1,5 @@
+<!--Confirmation de création d'un trajet-->
+
 <?php $controller = Request::getCurrentRequest()->getControllerName(); ?>
 <div class="container col-12" id="confirmationTrajet">
 	<br><br>

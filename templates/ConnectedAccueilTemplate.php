@@ -1,4 +1,4 @@
-<!-- Masthead -->
+<!-- Page d'accueil d'un utilisateur connecté -->
 <header class="masthead text-white text-center">
   <div class="overlay"></div>
   <div class="container">

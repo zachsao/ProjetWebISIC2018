@@ -1,22 +1,18 @@
 <!--Image de fond de la page trajet-->
 	<div id="wallPaperTrajet"></div>
 	
-	
 	<div class="container col-11">
 		</br>
 		<div class="row">
-		
-		
-		
 		<!---------------Filtre--------------------->
 		  <div class="col-lg-3" id="filtreTrajet">
 			<form action="?action=filtrerTrajets" class="form-horizontal" method="POST">
 				<fieldset>
 
-				<!-- Form Name -->
+				<!-- Legende du formulaire -->
 				<legend>Filtres</legend>
 
-				<!-- Text input-->
+				<!-- Champs du formulaire-->
 				<div class="form-group">
 				  <label class="col-md-10 control-label" for="filtreDepart ">Départ :</label>  
 				  <div class="col-md-10">
@@ -25,7 +21,6 @@
 				  </div>
 				</div>
 
-				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-10 control-label" for="filtreArrivee">Arrivée :</label>  
 				  <div class="col-md-10">
@@ -34,7 +29,6 @@
 				  </div>
 				</div>
 
-				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-10 control-label" for="filtreDate">Date :</label>  
 				  <div class="col-md-10">
@@ -57,73 +51,73 @@
 					foreach($_GET['trips'] as $trip){?>
 					  <div class="col-md-8" >
 					  
-							<!---------------Les jours au dessus des trajets -------------------->
-							<div class="row">
-								<div class="navbar navbar-default col-md-10" id="navJoursTrajets">
-								  <ul class="nav justify-content-center col-md-12">
-									<li class="nav-item col-md-2">
-									<?php
-										date_default_timezone_set('Europe/Paris');
-										setlocale(LC_TIME, 'fr_FR.utf8','fra');
-										
-										$date = date("l", mktime(0, 0, 0, date("m")  , date("d")-2, date("Y")));
-										echo strftime("%A", strtotime($date));
-										
-										echo "<br>";
-										echo date("d", mktime(0, 0, 0, date("m")  , date("d")-2, date("Y")));
-									?>
-									</li>
-									<li class="nav-item col-md-2">
-									<?php
-										date_default_timezone_set('Europe/Paris');
-										setlocale(LC_TIME, 'fr_FR.utf8','fra');
-										
-										$date = date("l", mktime(0, 0, 0, date("m")  , date("d")-1, date("Y")));
-										echo strftime("%A", strtotime($date));
-										
-										echo "<br>";
-										echo date("d", mktime(0, 0, 0, date("m")  , date("d")-1, date("Y")));
-									?>
-									</li>
-									<li class="nav-item col-md-2 active"> 
-									<?php
-									// Affichage demandée
-										date_default_timezone_set('Europe/Paris');		
-										setlocale(LC_TIME, 'fr_FR.utf8','fra');
-										
-										$date = date("l", mktime(0, 0, 0, date("m")  , date("d"), date("Y")));
-										echo strftime("%A", strtotime($date));
-										
-										echo "<br>";
-										echo date("d");
-									?>
-									</li>
-									<li class="nav-item col-md-2">
-									<?php
-										date_default_timezone_set('Europe/Paris');
-										setlocale(LC_TIME, 'fr_FR.utf8','fra');
-										
-										$date = date("l", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")));
-										echo strftime("%A", strtotime($date));
-										
-										echo "<br>";
-										echo date("d", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")));
-									?>
-									</li>
-									<li class="nav-item col-md-2"> 
-									<?php
-										date_default_timezone_set('Europe/Paris');
-										setlocale(LC_TIME, 'fr_FR.utf8','fra');
-										
-										$date = date("l", mktime(0, 0, 0, date("m")  , date("d")+2, date("Y")));
-										echo strftime("%A", strtotime($date));
-										
-										echo "<br>";
-										echo date("d", mktime(0, 0, 0, date("m")  , date("d")+2, date("Y")));
-									?></li>
-								  </ul>
-								</div>
+						<!---------------Les jours au dessus des trajets -------------------->
+						<!-- Ces jours devaient permettre de naviguer de jours en jours et de se mettre à jour en fonction du filtre appliqué. Par manque de temps, nous n'avons pas développé ces fonctionnalités -->
+						<div class="row">
+							<div class="navbar navbar-default col-md-10" id="navJoursTrajets">
+							  <ul class="nav justify-content-center col-md-12">
+								<li class="nav-item col-md-2">
+								<?php
+									date_default_timezone_set('Europe/Paris');
+									setlocale(LC_TIME, 'fr_FR.utf8','fra');
+									
+									$date = date("l", mktime(0, 0, 0, date("m")  , date("d")-2, date("Y")));
+									echo strftime("%A", strtotime($date));
+									
+									echo "<br>";
+									echo date("d", mktime(0, 0, 0, date("m")  , date("d")-2, date("Y")));				//avant-hier
+								?>
+								</li>
+								<li class="nav-item col-md-2">
+								<?php
+									date_default_timezone_set('Europe/Paris');
+									setlocale(LC_TIME, 'fr_FR.utf8','fra');
+									
+									$date = date("l", mktime(0, 0, 0, date("m")  , date("d")-1, date("Y")));
+									echo strftime("%A", strtotime($date));
+									
+									echo "<br>";
+									echo date("d", mktime(0, 0, 0, date("m")  , date("d")-1, date("Y")));				//hier
+								?>
+								</li>
+								<li class="nav-item col-md-2 active"> 
+								<?php
+									date_default_timezone_set('Europe/Paris');		
+									setlocale(LC_TIME, 'fr_FR.utf8','fra');
+									
+									$date = date("l", mktime(0, 0, 0, date("m")  , date("d"), date("Y")));
+									echo strftime("%A", strtotime($date));
+									
+									echo "<br>";
+									echo date("d");																		//aujourd'hui
+								?>
+								</li>
+								<li class="nav-item col-md-2">
+								<?php
+									date_default_timezone_set('Europe/Paris');
+									setlocale(LC_TIME, 'fr_FR.utf8','fra');
+									
+									$date = date("l", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")));
+									echo strftime("%A", strtotime($date));
+									
+									echo "<br>";
+									echo date("d", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")));				//demain
+								?>
+								</li>
+								<li class="nav-item col-md-2"> 
+								<?php
+									date_default_timezone_set('Europe/Paris');
+									setlocale(LC_TIME, 'fr_FR.utf8','fra');
+									
+									$date = date("l", mktime(0, 0, 0, date("m")  , date("d")+2, date("Y")));
+									echo strftime("%A", strtotime($date));
+									
+									echo "<br>";
+									echo date("d", mktime(0, 0, 0, date("m")  , date("d")+2, date("Y")));				//après-demain
+								?></li>
+							  </ul>
 							</div>
+						</div>
 							
 							<!---------------Les  trajets -------------------->
 							<div id="contentTrajets">
