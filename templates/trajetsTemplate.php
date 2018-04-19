@@ -47,8 +47,6 @@
 		  
 		  
 		  <!---------------Les trajets--------------------->
-		 <?php if(isset($_GET['trips'])){
-					foreach($_GET['trips'] as $trip){?>
 					  <div class="col-md-8" >
 					  
 						<!---------------Les jours au dessus des trajets -------------------->
@@ -120,6 +118,8 @@
 						</div>
 							
 							<!---------------Les  trajets -------------------->
+							<?php if(isset($_GET['trips'])){
+							foreach($_GET['trips'] as $trip){?>
 							<div id="contentTrajets">
 								
 								<div class="row">

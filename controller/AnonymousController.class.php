@@ -93,10 +93,14 @@ class AnonymousController extends Controller {
 		$arrivee = $_POST['filtreArrivee'];
 		$date = $_POST['filtreDate'];
 		
-		$trajets=( Trajet::getTrajet($date,$depart,$arrivee));
+		
+		if(isset($_GET['trips']))
+			unset($_GET['trips']);
+		
+		$trajets=( Trajet::getTrajetFromFiltre($date,$depart,$arrivee));
 		$request->write('trips',$trajets);
-		//print_r($_GET['trips']);
-		$this->voirTrajets($request);
+		$request->write('action','voirTrajets');
+		$this->execute();
 	}
 	
 
