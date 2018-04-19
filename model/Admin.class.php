@@ -21,6 +21,23 @@
 			return $req->fetchAll();
 		}
 		
+		//recupere les infos d'un utilisateur
+		public static function changeisAdmin($id_user, $is_admin){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "UPDATE `UTILISATEUR` SET IS_ADMIN=".$is_admin." WHERE ID_USER='".$id_user."'";
+			$db_connection->query($sql);	
+		}
+		
+		//recupere le nom de tous les utilisateurs 
+		public static function getAllUsers(){
+			$db_connection = DatabasePDO::getCurrentPDO();
+			$db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "SELECT PSEUDO FROM `UTILISATEUR`";
+			$req=$db_connection->query($sql);	
+			return $req->fetchAll();
+		}
+		
 		
 	}
 	

@@ -13,7 +13,11 @@ class AdminController extends Controller {
 		
 	}
 	///////////////////////////actions admin//////////////////////////////////////////
-	
+	public function profilGestionUser($request){
+		$listeUtilisateur = Admin::getAllUsers();
+		$view = new AdminView($this, 'adminProfilGestionUtilisateur'); 
+		$view->render();
+	}
 	//supprime l'utilisateur de la bdd
 	public function bloquerUtilisateur($request){
 		//récupere le login user depuis un champ de recherche
@@ -31,12 +35,16 @@ class AdminController extends Controller {
 	
 	//promouvoir un utilisateur au rand d'admin
 	public function promouvoir($request){
-		//a faire
+		if(isset($_SESSION['idUser']))
+			Admin::changeisAdmin($_SESSION['idUser'],1);
+		$this->profilGestionUser($request);
 	}
 	
 	//supprimer le role d'admin d'un utilisateur
 	public function destituer($request){
-		//a faire
+		if(isset($_SESSION['idUser']))
+			Admin::changeisAdmin($_SESSION['idUser'],0);
+		$this->profilGestionUser($request);
 	}
 	
 	//recupere l'utilisateur dont le pseudo est $login
@@ -100,10 +108,7 @@ class AdminController extends Controller {
 		$view->render();
 	}
 	
-	public function profilGestionUser($request){
-		$view = new AdminView($this, 'adminProfilGestionUtilisateur'); 
-		$view->render();
-	}
+	
 	
 	public function changerInfoGeneral($request){
 		if(empty($_POST)){
