@@ -1,16 +1,5 @@
-<<<<<<< HEAD
-<!--Gestion des utilisateurs : dédiée aux administrateurs-->	
-||||||| merged common ancestors
-<!--Gestion des utilisateurs : dédiée aux administrateurs-->
-	</br>
-	<h1> Bonjour <?php echo $_SESSION['login'];?> ! </h1> 
-	</br>
-	
-=======
-<!--Gestion des utilisateurs : dédiée aux administrateurs-->
 
-	
->>>>>>> 7d194e300adea8f4a37d21a6f669f1f34dda0a09
+<!--Gestion des utilisateurs : dédiée aux administrateurs-->
 	<div class="container col-12">
 		</br></br></br>
 	

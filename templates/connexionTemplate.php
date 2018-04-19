@@ -95,7 +95,7 @@
                 </div>
 				
 				</br></br>
-				<input class="offset-4" type="submit" value="Inscription" />
+				<input class="offset-4 inputButton" type="submit" value="Inscription" />
 				
             </form>
 			
@@ -129,7 +129,7 @@
                 </div>	
 				
 				</br></br>
-				<input class="offset-6" type="submit" value="Connexion" />
+				<input class="offset-6 inputButton" type="submit" value="Connexion" />
             </form>
 		</div>
 		</br></br></br>
